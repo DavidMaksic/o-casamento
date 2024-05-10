@@ -919,6 +919,17 @@ body {
   background-color: var(--cl-accent-tint);
   color: #fff;
 }
+.footer__credit:link, .footer__credit:visited {
+  color: var(--cl-neutral-50);
+  transition: all 0.3s;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--cl-neutral-300);
+}
+.footer__credit:hover, .footer__credit:active {
+  color: var(--cl-neutral-300);
+  border-bottom: 1px solid var(--cl-neutral-400);
+}
 
 .nav {
   display: grid;

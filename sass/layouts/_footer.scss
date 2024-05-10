@@ -212,4 +212,21 @@
          color: #fff;
       }
    }
+
+   &__credit {
+      &:link,
+      &:visited {
+         color: var(--cl-neutral-50);
+         transition: all 0.3s;
+         text-decoration: none;
+         text-transform: uppercase;
+         border-bottom: 1px solid var(--cl-neutral-300);
+      }
+
+      &:hover,
+      &:active {
+         color: var(--cl-neutral-300);
+         border-bottom: 1px solid var(--cl-neutral-400);
+      }
+   }
 }
