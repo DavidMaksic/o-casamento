@@ -6,8 +6,12 @@
 
 @mixin container {
    margin: 0 auto;
-   max-width: 140rem;
+   max-width: 80vw;
    height: 100vh;
+
+   @include respond(tab-port) {
+      max-width: 100vw;
+   }
 }
 
 //   --== GRID ==--

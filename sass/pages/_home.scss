@@ -19,12 +19,12 @@
       }
 
       @include respond(tab-port) {
-         @include flex-column(4rem);
-         padding-bottom: 32rem;
+         @include grid(0);
+         grid-template-rows: 0.9fr 1fr 0.1fr 1fr;
 
          .tab-port__logo {
             @include flex-column(0);
-            padding-bottom: 8rem;
+            justify-self: center;
 
             & img {
                width: 15rem;
@@ -66,6 +66,10 @@
          padding: var(--s-sm) var(--s-4xl);
          border: 2px solid transparent;
          opacity: 85%;
+
+         @include respond(tab-port) {
+            justify-self: center;
+         }
       }
 
       &:hover,
@@ -203,7 +207,7 @@
       width: 120rem;
 
       @include respond(tab-port) {
-         width: 60rem;
+         width: 90vw;
          height: min-content;
          padding-bottom: 12rem;
       }
@@ -227,18 +231,20 @@
          grid-template-columns: repeat(2, 1fr);
          gap: 4rem;
          row-gap: var(--ws-xs);
-         margin-left: -7rem;
       }
 
       @include respond(phone) {
          grid-template-columns: 1fr;
-         margin-left: 0;
       }
 
       & div {
          @include flex-column(2rem);
          justify-self: center;
-         width: 35rem;
+         width: 20vw;
+
+         @include respond(tab-port) {
+            width: 40vw;
+         }
 
          & img {
             align-self: center;
@@ -425,6 +431,13 @@
             width: 28rem;
             padding: var(--s-sm) var(--s-xl);
          }
+
+         @include respond(phone) {
+            @include flex;
+            width: 28rem;
+            margin: 0 auto;
+            padding: var(--s-sm) var(--s-xl);
+         }
       }
 
       &:hover,
@@ -599,7 +612,7 @@
       }
 
       @include respond(tab-land) {
-         @include grid-cols-2(4rem);
+         @include grid-cols-2(6rem);
       }
 
       @include respond(tab-port) {
@@ -670,11 +683,11 @@
       @include header-branch-middle;
       @include centered-header;
       max-width: 160rem;
+      height: min-content;
+      margin-bottom: 10rem;
 
       @include respond(tab-land) {
          @include flex-column(0);
-         height: min-content;
-         margin-bottom: 10rem;
       }
 
       & h2 {
@@ -710,9 +723,11 @@
       @include container;
       @include grid-cols-2(10rem);
       @include header-branch;
+      height: min-content;
 
       @include respond(tab-land) {
          @include grid-cols-2(6rem);
+         max-width: 95vw;
       }
 
       @include respond(tab-port) {
@@ -828,21 +843,25 @@
    // - Google Map
 
    &__map {
-      width: 65rem;
+      width: 33.15vw;
       height: 100vh;
 
       border-left: 1px solid var(--cl-neutral-300);
       border-right: 1px solid var(--cl-neutral-300);
 
+      @include respond(tab-land) {
+         width: 37.25vw;
+      }
+
       @include respond(tab-port) {
-         width: 98vw;
+         width: 97vw;
          height: min-content;
          border: none;
          border-top: 2px solid var(--cl-neutral-300);
       }
 
       @include respond(phone) {
-         width: 96.8vw;
+         width: 95vw;
       }
 
       @include respond(mini-phone) {
@@ -851,7 +870,11 @@
 
       & iframe {
          height: inherit;
-         width: 64.8rem;
+         width: 33vw;
+
+         @include respond(tab-land) {
+            width: 37vw;
+         }
 
          @include respond(tab-port) {
             width: 98vw;

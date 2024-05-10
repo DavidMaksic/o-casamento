@@ -7,6 +7,11 @@
    &__tables {
       @include flex-gap(10rem);
 
+      @media only screen and (max-width: 93.75em) {
+         width: 90vw;
+         margin: 0 auto;
+      }
+
       @include respond(tab-land) {
          @include flex-column(6rem);
       }
@@ -14,13 +19,13 @@
 
    & table {
       border: 1px solid #e5e5e5;
-      width: var(--ws-4xl);
       font-size: var(--s-lg);
       margin-top: var(--ws-3xs);
       border-collapse: collapse;
 
       @include respond(tab-port) {
-         width: 71rem;
+         width: 90vw;
+         margin: 0 auto;
       }
 
       & th,
