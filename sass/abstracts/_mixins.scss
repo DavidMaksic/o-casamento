@@ -202,35 +202,35 @@
 @mixin respond($breakpoint) {
    @if $breakpoint == tab-land {
       // 1200px
-      @media (max-width: 75em) {
+      @media only screen and (max-width: 75em) {
          @content;
       }
    }
 
    @if $breakpoint == tab-port {
       // 900px
-      @media (max-width: 56.25em) {
+      @media only screen and (max-width: 56.25em) {
          @content;
       }
    }
 
    @if $breakpoint == phone {
       // 500px
-      @media (max-width: 31.25em) {
+      @media only screen and (max-width: 31.25em) {
          @content;
       }
    }
 
    @if $breakpoint == mini-phone {
       // 320px 568px
-      @media (max-width: 20em) {
+      @media only screen and (max-width: 20em) {
          @content;
       }
    }
 
    @if $breakpoint == 2k-desktop {
       // 2500px
-      @media (min-width: 156.25em) {
+      @media only screen and (min-width: 156.25em) {
          @content;
       }
    }
