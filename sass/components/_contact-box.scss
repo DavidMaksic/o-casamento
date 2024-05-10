@@ -1,0 +1,100 @@
+@use '../base/base' as *;
+@use '../abstracts/mixins' as *;
+
+.contact-box {
+   width: 55rem;
+   padding: var(--ws-2xs);
+
+   background: linear-gradient(
+      to bottom,
+      rgba(229, 229, 229, 1) 0%,
+      rgba(242, 242, 242, 1) 100%
+   );
+
+   @include respond(tab-land) {
+      width: 50rem;
+   }
+
+   & h3 {
+      @include h3;
+      font-size: var(--s-4xl);
+      text-transform: none;
+
+      padding: var(--ws-3xs) 0;
+      text-align: center;
+      font-family: 'Dancing Script', cursive;
+
+      @include respond(tab-port) {
+         font-size: var(--s-big-1);
+      }
+   }
+
+   & img {
+      width: 47rem;
+      filter: grayscale(1) opacity(0.5);
+
+      @include respond(tab-land) {
+         width: 40rem;
+         filter: grayscale(1) opacity(0.45);
+      }
+   }
+
+   &__hours {
+      @include grid-cols-2(0);
+
+      text-align: center;
+      padding: var(--ws-3xs) 0;
+
+      & h4 {
+         @include h4;
+         color: var(--cl-neutral-700);
+         text-transform: none;
+
+         font-family: 'Dancing Script', cursive;
+         font-weight: var(--fw-3xl);
+         font-size: var(--s-xl);
+      }
+
+      & p {
+         @include p;
+
+         @include respond(tab-port) {
+            font-size: 2.6rem;
+         }
+      }
+
+      & div:first-child {
+         border-right: 2px solid #b8b8b8;
+
+         @include respond(tab-land) {
+            border-right: 1px solid #b8b8b8;
+         }
+      }
+   }
+
+   &__other-info {
+      @include flex-column(1rem);
+      font-size: var(--s-xs);
+      text-align: center;
+      padding-top: var(--s-3xl);
+
+      @include respond(tab-port) {
+         font-size: var(--s-sm);
+      }
+
+      & span a {
+         color: var(--cl-accent);
+         cursor: pointer;
+         border: none;
+         font-family: inherit;
+         background-color: transparent;
+         text-decoration: none;
+         transition: color 0.15s;
+
+         &:hover,
+         &:active {
+            color: var(--cl-accent-tint);
+         }
+      }
+   }
+}

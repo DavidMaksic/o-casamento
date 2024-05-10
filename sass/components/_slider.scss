@@ -1,0 +1,92 @@
+@use '../base/base' as *;
+@use '../abstracts/mixins' as *;
+
+.t-slider {
+   @include grid-cols-2(0);
+   max-width: 60vw;
+   align-self: center;
+   overflow: hidden;
+   transition: opacity 2s;
+
+   .t-slide {
+      grid-column: 1 / span 2;
+      grid-row: 1 / span 1;
+      transition: transform 1s;
+   }
+
+   &__chevrons {
+      position: absolute;
+      width: var(--s-big-2);
+      cursor: pointer;
+      transition: 0.3s;
+      opacity: 80%;
+      margin-bottom: var(--s-lg);
+
+      &:hover,
+      &:active {
+         transform: scale(0.9);
+         opacity: 40%;
+      }
+
+      &--1 {
+         left: 14%;
+
+         &:hover,
+         &:active {
+            transform: translate(-0.5rem);
+         }
+
+         @include respond(tab-port) {
+            left: 3%;
+         }
+      }
+
+      &--2 {
+         right: 14%;
+
+         &:hover,
+         &:active {
+            transform: translate(0.5rem);
+         }
+
+         @include respond(tab-port) {
+            left: 90%;
+         }
+
+         @include respond(phone) {
+            left: 88%;
+         }
+      }
+   }
+
+   // - Slider content
+
+   & p {
+      margin: var(--s-3xs) 0 var(--s-lg) 0;
+      @include p;
+
+      font-size: var(--s-3xl);
+      font-weight: var(--fw-md);
+      line-height: var(--lh-lg);
+
+      color: var(--cl-neutral-600);
+      letter-spacing: normal;
+
+      @include respond(tab-port) {
+         font-size: var(--s-2xl);
+      }
+
+      @include respond(phone) {
+         font-weight: 600;
+      }
+   }
+
+   & span {
+      font-size: var(--s-lg);
+      color: var(--cl-accent);
+
+      @include respond(tab-land) {
+         font-size: var(--s-xl);
+      }
+   }
+}

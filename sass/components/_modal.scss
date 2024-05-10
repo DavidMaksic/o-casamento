@@ -1,0 +1,175 @@
+@use '../base/base' as *;
+@use '../abstracts/mixins' as *;
+
+.modal {
+   position: fixed;
+
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+
+   padding-top: 6rem;
+
+   @include respond(2k-desktop) {
+      padding-top: 10rem;
+   }
+
+   @include respond(tab-land) {
+      padding-top: 10rem;
+   }
+
+   @include respond(tab-land) {
+      padding-top: 25rem;
+   }
+
+   @include respond(mini-phone) {
+      padding-top: 29rem;
+   }
+
+   overflow: auto;
+   z-index: 88;
+
+   background-color: rgba($color: #000000, $alpha: 0.7);
+   backdrop-filter: blur(0.8rem);
+   transition: all 0.3s;
+
+   &__content {
+      position: relative;
+      @include flex-column(0);
+      justify-content: center;
+   }
+
+   &__previews {
+      @include flex;
+      gap: 0.5rem;
+   }
+
+   &__preview {
+      height: 14rem;
+      margin-top: var(--s-lg);
+      opacity: 60%;
+      cursor: pointer;
+      transition: all 0.2s;
+
+      @include respond(tab-land) {
+         height: 10rem;
+      }
+
+      @include respond(phone) {
+         margin-top: 3rem;
+         height: 9.5rem;
+      }
+
+      &:hover,
+      &:active {
+         opacity: 90%;
+      }
+   }
+
+   &__image-box {
+      display: none;
+      align-self: center;
+   }
+
+   &__image {
+      max-height: 70rem;
+
+      @include respond(2k-desktop) {
+         max-height: 65rem;
+      }
+
+      @include respond(tab-land) {
+         max-height: 65rem;
+      }
+
+      @include respond(tab-port) {
+         max-height: 40rem;
+      }
+   }
+
+   &__close {
+      position: absolute;
+      top: -3rem;
+      right: 5rem;
+      width: 5rem;
+      filter: invert(1) contrast(0.6);
+      cursor: pointer;
+      transition: filter 0.2s;
+
+      @include respond(tab-land) {
+         top: -6rem;
+      }
+
+      @include respond(tab-land) {
+         top: -20.5rem;
+         right: 4.4rem;
+      }
+
+      @include respond(phone) {
+         filter: invert(1) contrast(1);
+      }
+
+      &:hover,
+      &:focus {
+         filter: invert(1) contrast(0.3);
+      }
+   }
+
+   &__chevrons {
+      position: absolute;
+      top: 40%;
+      width: var(--ws-xs);
+      cursor: pointer;
+      filter: invert(1) contrast(0.3);
+
+      @include respond(phone) {
+         filter: invert(1) contrast(1);
+      }
+
+      &--1 {
+         left: 5rem;
+         transition: transform 0.5s, filter 0.2s;
+
+         @include respond(tab-land) {
+            left: 0;
+         }
+
+         &:hover {
+            transform: translateX(-1rem);
+            filter: invert(1) contrast(0.01);
+         }
+      }
+
+      &--2 {
+         right: 5rem;
+         transition: transform 0.5s, filter 0.2s;
+
+         @include respond(tab-land) {
+            right: 0;
+         }
+
+         &:hover {
+            transform: translateX(1rem);
+            filter: invert(1) contrast(0.01);
+         }
+      }
+   }
+
+   // - Hide modal
+   opacity: 0;
+   pointer-events: none;
+   visibility: hidden;
+}
+
+// - Show modal
+.open-lightbox {
+   opacity: 1;
+   pointer-events: auto;
+   visibility: visible;
+}
+
+// - Highlight current preview
+.active-preview {
+   opacity: 1;
+}

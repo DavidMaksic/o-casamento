@@ -1,0 +1,908 @@
+@use '../abstracts/mixins' as *;
+@use '../base/base' as *;
+
+/* ================ */
+/*       HERO       */
+/* ================ */
+
+.hero {
+   position: relative;
+
+   &__container {
+      @include flex-column(3rem);
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+
+      .tab-port__logo {
+         display: none;
+      }
+
+      @include respond(tab-port) {
+         @include flex-column(4rem);
+         padding-bottom: 32rem;
+
+         .tab-port__logo {
+            @include flex-column(0);
+            padding-bottom: 8rem;
+
+            & img {
+               width: 15rem;
+               filter: invert(1);
+               align-self: center;
+
+               @include respond(phone) {
+                  width: 13rem;
+               }
+            }
+
+            & span {
+               font-size: var(--s-2xl);
+               font-weight: 600;
+               color: #fff;
+            }
+         }
+      }
+
+      & h1 {
+         @include h1;
+         font-weight: var(--fw-3xl);
+         color: var(--cl-neutral-200);
+
+         &::selection {
+            background-color: var(--cl-accent-tint);
+            color: #fff;
+         }
+
+         @include respond(ultrawide-desktop) {
+            margin-top: 6rem;
+         }
+      }
+   }
+
+   &__btn {
+      &:link,
+      &:visited {
+         padding: var(--s-sm) var(--s-4xl);
+         border: 2px solid transparent;
+         opacity: 85%;
+      }
+
+      &:hover,
+      &:active {
+         transform: scale(0.95);
+         color: var(--cl-neutral-100);
+
+         border: 2px solid #fff;
+         background-color: transparent;
+      }
+
+      &:focus {
+         outline: none;
+         box-shadow: 0 0 0 0.8rem hsla(0, 0%, 96%, 0.5) !important;
+      }
+   }
+
+   &__video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+   }
+
+   &__video-content {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+   }
+}
+
+.about {
+   &__container {
+      @include container;
+      @include grid-cols-2(10rem);
+      @include header-branch;
+
+      @include respond(2k-desktop) {
+         max-width: 140rem;
+      }
+
+      @include respond(tab-land) {
+         @include grid-cols-2(6rem);
+      }
+
+      @include respond(tab-port) {
+         grid-template-columns: 0.5fr 1fr;
+         gap: 4rem;
+         margin-right: 1rem;
+      }
+   }
+
+   &__info {
+      justify-self: center;
+
+      & h4 {
+         @include h4;
+      }
+
+      & h2 {
+         @include h2;
+
+         @include respond(phone) {
+            margin-bottom: var(--s-3xl);
+         }
+      }
+
+      & p {
+         @include p;
+      }
+   }
+
+   &__img {
+      height: 100vh;
+
+      @include respond(tab-land) {
+         height: 100vh;
+      }
+
+      &--1,
+      &--2,
+      &--3,
+      &--4 {
+         display: none;
+      }
+
+      @media (min-width: 75em) {
+         &--1 {
+            display: block;
+         }
+      }
+
+      @include respond(tab-land) {
+         &--2 {
+            display: block;
+         }
+      }
+
+      @include respond(tab-port) {
+         &--3 {
+            display: block;
+         }
+
+         &--2 {
+            display: none;
+         }
+      }
+
+      @include respond(phone) {
+         &--4 {
+            display: block;
+         }
+
+         &--3 {
+            display: none;
+         }
+      }
+   }
+}
+
+.feature {
+   @include bg-gradient;
+   scroll-margin-top: 2.5rem;
+
+   @include respond(tab-port) {
+      scroll-margin-top: 0;
+   }
+
+   &__container {
+      @include container;
+      @include header-branch-middle;
+      @include centered-header;
+      width: 120rem;
+
+      @include respond(tab-port) {
+         width: 60rem;
+         height: min-content;
+         padding-bottom: 12rem;
+      }
+   }
+
+   &__info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+
+      gap: (var(--ws-md));
+      row-gap: var(--ws-xs);
+      padding-top: var(--ws-2xs);
+
+      @include respond(tab-land) {
+         grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+         gap: (var(--ws-xs));
+         row-gap: var(--ws-2xs);
+      }
+
+      @include respond(tab-port) {
+         grid-template-columns: repeat(2, 1fr);
+         gap: 4rem;
+         row-gap: var(--ws-xs);
+         margin-left: -7rem;
+      }
+
+      @include respond(phone) {
+         grid-template-columns: 1fr;
+         margin-left: 0;
+      }
+
+      & div {
+         @include flex-column(2rem);
+         justify-self: center;
+         width: 35rem;
+
+         & img {
+            align-self: center;
+            width: var(--s-big-3);
+            color: #fff;
+
+            @include respond(phone) {
+               width: var(--s-big-4);
+            }
+         }
+
+         & h3 {
+            @include h3;
+            align-self: center;
+            text-align: center;
+            text-transform: none;
+            margin-top: var(--s-lg);
+
+            @include respond(phone) {
+               font-size: var(--s-2xl);
+            }
+         }
+
+         & p {
+            @include p;
+            font-size: var(--s-md);
+            text-align: center;
+            align-self: center;
+
+            @include respond(phone) {
+               font-size: var(--s-lg);
+            }
+         }
+      }
+   }
+}
+
+.gallery {
+   &__container {
+      @include container;
+      @include header-branch;
+      @include grid-cols-2(10rem);
+
+      @include respond(tab-land) {
+         @include grid-cols-2(6rem);
+      }
+
+      @include respond(phone) {
+         grid-template-columns: 1fr;
+         height: min-content;
+         padding-top: var(--ws-sm);
+         justify-content: center;
+
+         .header-branch {
+            justify-content: center;
+         }
+      }
+
+      & h4 {
+         @include h4;
+
+         @include respond(phone) {
+            text-align: center;
+         }
+      }
+
+      & h2 {
+         @include h2;
+
+         @include respond(tab-port) {
+            margin-bottom: var(--s-3xl);
+         }
+
+         @include respond(phone) {
+            margin-bottom: var(--s-3xl);
+            text-align: center;
+         }
+      }
+
+      & p {
+         @include p;
+         margin-bottom: 5rem;
+
+         @include respond(tab-port) {
+            margin-bottom: var(--s-3xl);
+         }
+
+         @include respond(phone) {
+            text-align: center;
+            width: 90vw;
+            margin: 0 auto;
+            margin-bottom: 5rem;
+         }
+      }
+   }
+
+   &__info {
+      .tab-port__branch {
+         display: none;
+      }
+
+      @include respond(tab-land) {
+         margin-left: 7rem;
+      }
+
+      @include respond(tab-port) {
+         margin-left: 5rem;
+      }
+
+      @include respond(phone) {
+         padding-bottom: var(--ws-2xs);
+         margin-left: 0;
+
+         .tab-port__branch {
+            display: block;
+         }
+      }
+   }
+
+   &__images {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      gap: 0.5rem;
+
+      height: 100vh;
+      overflow: hidden;
+   }
+
+   &__img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      transition: all 0.5s;
+
+      &:hover,
+      &:visited {
+         transform: scale(1.02);
+      }
+   }
+
+   &__item {
+      overflow: hidden;
+      cursor: pointer;
+
+      &--1 {
+         grid-column: 1 / span 5;
+         grid-row: 1;
+      }
+
+      &--2 {
+         grid-column: 6 / span 5;
+         grid-row: 1 / span 3;
+      }
+
+      &--3 {
+         grid-column: 1 / span 5;
+         grid-row: 2 / span 3;
+      }
+
+      &--4 {
+         grid-column: 6 / span 5;
+         grid-row: 4;
+      }
+
+      &--5 {
+         grid-column: 1 / span 10;
+         grid-row: 5 / span 2;
+      }
+   }
+
+   &__btn {
+      &:link,
+      &:visited {
+         color: var(--cl-neutral-100);
+         padding: var(--s-sm) var(--s-4xl);
+         opacity: 85%;
+
+         box-shadow: none;
+         border: 2px solid transparent;
+         background-color: var(--cl-accent);
+
+         @include respond(tab-port) {
+            @include flex;
+            width: 28rem;
+            padding: var(--s-sm) var(--s-xl);
+         }
+      }
+
+      &:hover,
+      &:active {
+         color: var(--cl-neutral-700);
+         transform: scale(0.95);
+
+         box-shadow: var(--bs-sm);
+         border: 2px solid var(--cl-neutral-400);
+         background-color: #fff;
+      }
+   }
+}
+
+.testimonials {
+   @include bg-gradient;
+   position: relative;
+   overflow: hidden;
+
+   &__container {
+      @include container;
+      @include flex-column(0);
+      justify-content: center;
+      text-align: center;
+
+      height: 45rem;
+   }
+
+   // - Quotation decoration
+
+   &__circle,
+   &__quote-mark {
+      position: absolute;
+      opacity: 70%;
+   }
+
+   &__circle {
+      top: 5rem;
+      width: 14rem;
+      transform: skew(-15deg) translateX(63.5rem);
+
+      @include respond(tab-land) {
+         top: 3rem;
+         transform: skew(-15deg) translateX(59.3rem);
+      }
+
+      @include respond(tab-port) {
+         top: 2rem;
+         transform: skew(-15deg) translateX(31.6rem);
+      }
+
+      @include respond(phone) {
+         display: none;
+      }
+   }
+
+   &__quote-mark {
+      top: 8rem;
+      width: 5rem;
+
+      filter: contrast(0.7);
+      transform: skew(-10deg) translateX(68rem);
+
+      @include respond(tab-land) {
+         top: 6rem;
+         transform: skew(-10deg) translateX(64rem);
+      }
+
+      @include respond(tab-port) {
+         top: 3rem;
+         transform: skew(-10deg) translateX(36.5rem);
+      }
+
+      @include respond(phone) {
+         width: 7rem;
+
+         opacity: 60%;
+         transform: skew(-10deg) translateX(49.5rem);
+      }
+   }
+
+   // - Decoration
+
+   &__flowers {
+      &--1,
+      &--2,
+      &--3,
+      &--4,
+      &--5,
+      &--6 {
+         position: absolute;
+         opacity: 30%;
+      }
+
+      &--1 {
+         width: var(--s-big-2);
+         bottom: -4rem;
+         right: 19rem;
+         transform: rotate(-30deg);
+
+         @include respond(tab-port) {
+            right: 2rem;
+         }
+      }
+
+      &--2 {
+         width: var(--s-big-3);
+         bottom: -1.3rem;
+         right: 23rem;
+         transform: rotate(-70deg);
+
+         @include respond(tab-port) {
+            right: 6rem;
+         }
+      }
+
+      &--3 {
+         width: var(--ws-md);
+         bottom: -4rem;
+         right: 4rem;
+         transform: rotate(5deg);
+
+         @include respond(tab-port) {
+            display: none;
+         }
+      }
+
+      &--4 {
+         width: 13rem;
+         top: -5rem;
+         left: 4rem;
+         transform: rotate(180deg);
+
+         @include respond(tab-port) {
+            display: none;
+         }
+      }
+
+      &--5 {
+         width: 10rem;
+         top: -3rem;
+         left: 16rem;
+         transform: rotate(140deg);
+
+         @include respond(tab-port) {
+            width: 11rem;
+            left: -1rem;
+         }
+      }
+
+      &--6 {
+         width: 5rem;
+         top: -1.2rem;
+         left: 23rem;
+         transform: rotate(130deg);
+
+         @include respond(tab-port) {
+            left: 7rem;
+         }
+      }
+   }
+}
+
+.faq {
+   &__container {
+      @include container;
+      @include grid-cols-2(10rem);
+      @include header-branch;
+
+      @include respond(2k-desktop) {
+         gap: 0;
+      }
+
+      @include respond(tab-land) {
+         @include grid-cols-2(4rem);
+      }
+
+      @include respond(tab-port) {
+         gap: 5rem;
+         grid-template-columns: 1fr 3fr;
+      }
+   }
+
+   &__video {
+      height: 100vh;
+
+      &--1,
+      &--2,
+      &--3 {
+         display: none;
+      }
+
+      @media (min-width: 56.25em) {
+         &--1 {
+            display: block;
+         }
+      }
+
+      @include respond(tab-port) {
+         &--2 {
+            display: block;
+         }
+
+         &--1 {
+            display: none;
+         }
+      }
+
+      @include respond(phone) {
+         &--3 {
+            display: block;
+         }
+
+         &--2 {
+            display: none;
+         }
+      }
+   }
+
+   &__accordion {
+      margin-top: -42rem;
+
+      & h4 {
+         @include h4;
+      }
+
+      & h2 {
+         @include h2;
+      }
+   }
+}
+
+.pricing {
+   @include bg-gradient;
+   scroll-margin-top: var(--s-lg);
+
+   @include respond(tab-port) {
+      scroll-margin-top: -0.5rem;
+   }
+
+   &__container {
+      @include container;
+      @include header-branch-middle;
+      @include centered-header;
+      max-width: 160rem;
+
+      @include respond(tab-land) {
+         @include flex-column(0);
+         height: min-content;
+         margin-bottom: 10rem;
+      }
+
+      & h2 {
+         @include respond(phone) {
+            font-size: 5rem;
+         }
+      }
+   }
+
+   &__info {
+      @include flex-column(2rem);
+      align-items: center;
+      margin-top: var(--ws-xs);
+
+      & p {
+         font-size: var(--s-md);
+         color: var(--cl-neutral-500);
+         text-align: center;
+         width: 90vw;
+      }
+
+      & span {
+         align-self: center;
+         background-color: var(--cl-neutral-300);
+         height: 1px;
+         width: 60%;
+      }
+   }
+}
+
+.contact {
+   &__container {
+      @include container;
+      @include grid-cols-2(10rem);
+      @include header-branch;
+
+      @include respond(tab-land) {
+         @include grid-cols-2(6rem);
+      }
+
+      @include respond(tab-port) {
+         grid-template-columns: 1fr;
+         gap: 10rem;
+
+         .header-branch {
+            justify-content: center;
+         }
+      }
+   }
+
+   &__info {
+      position: relative;
+
+      .tab-port__branch {
+         display: none;
+      }
+
+      @include respond(tab-land) {
+         margin-left: 7rem;
+      }
+
+      @include respond(tab-port) {
+         justify-self: center;
+         margin: var(--ws-sm) 0 0 0;
+
+         .tab-port__branch {
+            display: block;
+         }
+      }
+
+      & h4 {
+         @include h4;
+
+         @include respond(tab-port) {
+            font-size: var(--s-lg);
+         }
+      }
+
+      & h2 {
+         @include h2;
+
+         @include respond(tab-port) {
+            text-align: center;
+         }
+      }
+   }
+
+   // - Decoration
+
+   &__flowers {
+      position: absolute;
+      opacity: 50%;
+      filter: contrast(0.6);
+
+      &--1 {
+         width: 18rem;
+         top: 24.1rem;
+         left: -12rem;
+         transform: rotate(-20deg);
+
+         @include respond(tab-land) {
+            width: 12rem;
+            top: 34.9rem;
+            left: -5rem;
+         }
+
+         @include respond(tab-port) {
+            width: 15rem;
+            top: 31.7rem;
+            left: -9rem;
+         }
+
+         @include respond(phone) {
+            width: 12rem;
+            top: 37.5rem;
+            left: -4rem;
+
+            opacity: 45%;
+         }
+      }
+
+      &--2 {
+         width: 10rem;
+         top: 40.9em;
+         left: 52rem;
+         transform: rotate(30deg);
+         z-index: -1;
+
+         @include respond(tab-land) {
+            width: 7rem;
+            top: 45.4em;
+            left: 48rem;
+         }
+
+         @include respond(tab-port) {
+            width: 9.5rem;
+            top: 43.5em;
+            left: 47rem;
+         }
+
+         @include respond(phone) {
+            width: 7rem;
+            top: 48em;
+            left: 45.3rem;
+
+            z-index: 1;
+         }
+      }
+   }
+
+   // - Google Map
+
+   &__map {
+      width: 65rem;
+      height: 100vh;
+
+      border-left: 1px solid var(--cl-neutral-300);
+      border-right: 1px solid var(--cl-neutral-300);
+
+      @include respond(tab-port) {
+         width: 98vw;
+         height: min-content;
+         border: none;
+         border-top: 2px solid var(--cl-neutral-300);
+      }
+
+      @include respond(phone) {
+         width: 96.8vw;
+      }
+
+      @include respond(mini-phone) {
+         width: 94.8vw;
+      }
+
+      & iframe {
+         height: inherit;
+         width: 64.8rem;
+
+         @include respond(tab-port) {
+            width: 98vw;
+            height: 40rem;
+         }
+
+         @include respond(phone) {
+            width: 96.8vw;
+         }
+
+         @include respond(mini-phone) {
+            width: 94.8vw;
+         }
+      }
+   }
+}
+
+.phone-sticky {
+   position: fixed;
+   width: var(--s-big-4);
+   bottom: 6rem;
+   right: 6rem;
+   transition: all 0.5s;
+   transform: translateY(-20%);
+
+   opacity: 0;
+   pointer-events: auto;
+   visibility: hidden;
+
+   @include respond(tab-port) {
+      bottom: 6rem;
+      right: 2rem;
+      background-color: #fff;
+      border-radius: 50%;
+   }
+
+   &:hover,
+   &:active {
+      transform: scale(0.93);
+      opacity: 80%;
+   }
+}
+
+.phone-sticky-active {
+   opacity: 40%;
+   pointer-events: all;
+   visibility: visible;
+
+   transform: translateY(0);
+
+   @include respond(tab-port) {
+      opacity: 60%;
+   }
+}

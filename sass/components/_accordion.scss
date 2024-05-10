@@ -1,0 +1,92 @@
+@use '../base/base' as *;
+@use '../abstracts/mixins' as *;
+
+.accordion {
+   @include flex-column(0);
+   position: absolute;
+   margin: 0 auto;
+   max-width: 70rem;
+
+   background-color: #fff;
+   box-shadow: var(--bs-sm);
+
+   @include respond(tab-land) {
+      max-width: 60rem;
+   }
+
+   @include respond(tab-port) {
+      max-width: 41rem;
+   }
+
+   @include respond(phone) {
+      max-width: 32rem;
+   }
+
+   &__item {
+      padding: var(--s-lg) var(--s-2xl);
+      list-style: none;
+      cursor: pointer;
+
+      @include respond(phone) {
+         padding: var(--s-lg) var(--s-xl);
+      }
+
+      &:not(:last-child) {
+         border-bottom: 1px dotted var(--cl-neutral-300);
+      }
+
+      & h3 {
+         font-size: var(--s-lg);
+         color: var(--cl-neutral-600);
+         transition: color 0.15s;
+      }
+
+      &:hover,
+      &:active {
+         & h3 {
+            color: var(--cl-neutral-400);
+         }
+      }
+   }
+
+   &__question {
+      @include flex;
+      justify-content: space-between;
+   }
+
+   &__answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+
+      & p {
+         font-size: var(--s-md);
+         padding: var(--s-lg) 0 0.2rem 0;
+         line-height: var(--lh-pg);
+         max-width: 95%;
+      }
+   }
+
+   &__icon {
+      display: inline-block;
+      font-size: var(--s-lg);
+      transition: transform 0.3s;
+      filter: contrast(0.6);
+   }
+
+   .acc-open .accordion__answer {
+      max-height: 10rem;
+
+      @include respond(tab-port) {
+         max-height: 13.2rem;
+      }
+
+      @include respond(phone) {
+         max-height: 16rem;
+      }
+   }
+
+   .acc-open .accordion__icon {
+      transform: rotate(180deg);
+   }
+}

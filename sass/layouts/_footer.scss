@@ -1,0 +1,215 @@
+@use '../base/base' as *;
+@use '../abstracts/mixins' as *;
+
+.footer {
+   background-color: var(--cl-accent-shade-2);
+   color: var(--cl-neutral-50);
+
+   // Alignement ----------
+
+   @include grid(4rem);
+   padding: var(--ws-2xs) var(--ws-md);
+
+   @include respond(tab-port) {
+      margin-top: 16.3rem;
+   }
+
+   @include respond(phone) {
+      gap: 8rem;
+   }
+
+   @include respond(mini-phone) {
+      margin-top: 8.7rem;
+   }
+
+   // Logo ----------
+
+   &__logo {
+      @include flex-column(1rem);
+      justify-self: center;
+      align-items: center;
+      cursor: pointer;
+
+      @include respond(phone) {
+         padding-top: 4rem;
+      }
+
+      & img {
+         width: var(--s-big-4);
+         filter: invert(1);
+
+         @include respond(phone) {
+            width: var(--ws-sm);
+         }
+      }
+
+      & span {
+         font-size: var(--s-2xl);
+         font-weight: var(--fw-3xl);
+      }
+   }
+
+   // Links ----------
+
+   &__links {
+      @include flex-gap(4rem);
+      padding: var(--ws-3xs);
+      width: 120rem;
+
+      border-top: 1px solid var(--cl-neutral-300);
+      border-bottom: 1px solid var(--cl-neutral-300);
+
+      @include respond(tab-port) {
+         width: 90vw;
+         gap: 1.7rem;
+      }
+
+      @include respond(phone) {
+         display: grid;
+         grid-template-columns: 1fr 0.01fr 1fr;
+         row-gap: 3rem;
+         margin: 0 auto;
+         width: 70vw;
+      }
+
+      & li {
+         list-style: none;
+
+         @include respond(phone) {
+            justify-self: center;
+         }
+
+         & span,
+         & a:link,
+         & a:visited {
+            text-decoration: none;
+            color: #fff;
+            font-size: var(--s-lg);
+            border-bottom: 1px solid transparent;
+            transition: all 0.2s;
+
+            @include respond(phone) {
+               font-size: var(--s-2xl);
+            }
+
+            &::selection {
+               background-color: var(--cl-accent-tint);
+               color: #fff;
+            }
+         }
+
+         & span:hover,
+         & span:active {
+            color: var(--cl-neutral-300);
+            border-bottom: 1px solid var(--cl-neutral-300);
+         }
+      }
+   }
+
+   // Contact box ----------
+
+   &__contacts {
+      @include flex-gap(10rem);
+
+      @include respond(tab-port) {
+         gap: 6rem;
+      }
+
+      @include respond(phone) {
+         flex-direction: column;
+      }
+
+      & span,
+      & a:link,
+      & a:visited {
+         font-size: var(--s-md);
+         text-decoration: none;
+         color: #fff;
+         transition: all 0.2s;
+
+         @include respond(phone) {
+            font-size: var(--s-2xl);
+         }
+
+         &::selection {
+            background-color: var(--cl-accent-tint);
+            color: #fff;
+         }
+      }
+
+      & span:hover:last-child,
+      & span:active:last-child {
+         color: var(--cl-neutral-300);
+      }
+
+      .working-hours span:hover,
+      .working-hours span:active {
+         color: #fff;
+      }
+   }
+
+   &__contact {
+      @include flex-column(1.5rem);
+
+      .contact__icon {
+         align-self: center;
+      }
+
+      & div {
+         @include flex-column(1rem);
+      }
+   }
+
+   .contact__icon {
+      font-size: var(--s-2xl);
+      color: #fff;
+
+      @include respond(phone) {
+         font-size: var(--s-4xl);
+      }
+   }
+
+   // Socials ----------
+
+   .socials {
+      justify-self: center;
+      padding: var(--s-3xl) 0 var(--s-xs) 0;
+
+      border-bottom: 1px solid var(--cl-neutral-300);
+
+      @include respond(phone) {
+         height: var(--s-big-2);
+
+         border-bottom: none;
+         border-top: 1px solid var(--cl-neutral-300);
+      }
+
+      &__icon {
+         color: #fff;
+         transition: all 0.2s;
+
+         @include respond(phone) {
+            font-size: var(--s-big-1);
+         }
+
+         &:hover {
+            color: var(--cl-neutral-300);
+            cursor: pointer;
+         }
+      }
+   }
+
+   // Other info ----------
+
+   & p {
+      font-size: var(--s-xs);
+      justify-self: center;
+      text-align: center;
+      line-height: var(--lh-xl);
+
+      &::selection {
+         background-color: var(--cl-accent-tint);
+         color: #fff;
+      }
+   }
+}

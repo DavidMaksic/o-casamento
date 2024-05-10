@@ -1,0 +1,27 @@
+// ABSTRACTS
+
+@forward 'abstracts/mixins';
+
+// BASE
+
+@forward 'base/base';
+
+// COMPONENTS
+
+@forward 'components/accordion';
+@forward 'components/button';
+@forward 'components/contact-box';
+@forward 'components/modal';
+@forward 'components/pricing';
+@forward 'components/slider';
+@forward 'components/socials';
+
+// LAYOUT
+
+@forward 'layouts/footer';
+@forward 'layouts/header';
+@forward 'layouts/mobile-nav';
+
+// PAGES
+
+@forward 'pages/home';

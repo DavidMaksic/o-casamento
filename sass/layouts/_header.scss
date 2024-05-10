@@ -1,0 +1,154 @@
+@use '../base/base' as *;
+@use '../abstracts/mixins' as *;
+
+.nav {
+   @include grid(4rem);
+   grid-template-columns: 1fr 0.15fr 1fr;
+
+   position: fixed;
+   height: 20rem;
+
+   right: 0;
+   left: 0;
+
+   font-size: var(--s-lg);
+   background-color: transparent;
+   z-index: 55;
+   transition: 0.6s ease-in-out;
+
+   @include respond(tab-land) {
+      font-size: var(--s-lg);
+      height: 18rem;
+   }
+
+   &__logo {
+      @include flex-column(1rem);
+      align-items: center;
+      color: #fff;
+      font-weight: var(--fw-3xl);
+
+      &:link,
+      :visited {
+         text-transform: uppercase;
+         text-decoration: none;
+      }
+
+      img {
+         width: var(--s-big-3);
+         filter: invert(1);
+      }
+   }
+
+   &__sections {
+      @include flex-gap(2rem);
+
+      &--first {
+         justify-content: flex-end;
+      }
+
+      &--third {
+         justify-content: flex-start;
+      }
+
+      & li {
+         list-style: none;
+      }
+
+      & a:link,
+      & a:visited {
+         display: inline-block;
+         color: var(--cl-neutral-100);
+         margin: 2rem;
+         padding: 0.5rem;
+
+         text-transform: uppercase;
+         white-space: nowrap;
+         text-decoration: none;
+
+         transition: all 0.2s;
+
+         @include respond(tab-land) {
+            margin: 2rem;
+         }
+
+         &::selection {
+            background-color: #579f9a;
+            color: #fff;
+         }
+      }
+
+      & a:hover,
+      & a:active {
+         color: var(--cl-neutral-400);
+      }
+   }
+
+   .socials {
+      display: none;
+   }
+
+   @include respond(tab-port) {
+      .socials {
+         display: flex;
+         gap: 5rem;
+
+         & a:link,
+         & a:visited {
+            color: var(--cl-neutral-300);
+            font-size: var(--s-big-1);
+            margin-top: var(--s-xl);
+
+            @include respond(phone) {
+               color: var(--cl-neutral-200);
+            }
+         }
+      }
+   }
+}
+
+// -- Sticky navigation
+
+@media (min-width: 56.25em) {
+   .sticky {
+      position: fixed;
+      grid-template-columns: 1fr 0.1fr 1fr;
+
+      height: var(--ws-xs);
+      top: 0;
+
+      background-color: #fff;
+      box-shadow: var(--bs-xs);
+
+      opacity: 97%;
+      z-index: 55;
+
+      & .nav__content {
+         gap: 0;
+      }
+
+      & img {
+         width: 5.4rem;
+         padding: 0.5rem;
+         filter: invert(0);
+         filter: contrast(0.2);
+      }
+
+      & .nav__logo span {
+         display: none;
+         font-size: var(--s-sm);
+         color: var(--cl-neutral-600);
+      }
+
+      & .nav__sections a:link,
+      & .nav__sections a:visited {
+         color: var(--cl-neutral-700);
+         padding: 0.5rem;
+         transition: all 0.2s;
+      }
+
+      & .nav__sections a:hover,
+      & .nav__sections a:active {
+         color: var(--cl-neutral-400);
+      }
+   }
+}

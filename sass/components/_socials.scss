@@ -1,0 +1,25 @@
+@use '../base/base' as *;
+
+.socials {
+   display: flex;
+   gap: var(--s-3xl);
+   line-height: var(--lh-xs);
+
+   & li {
+      list-style: none;
+   }
+
+   & a:link,
+   & a:visited {
+      display: inline-block;
+      font-size: var(--s-3xl);
+      color: var(--cl-neutral-600);
+
+      transition: all 0.1s;
+   }
+
+   & a:hover,
+   & a:active {
+      color: var(--cl-neutral-500);
+   }
+}

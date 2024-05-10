@@ -1,0 +1,177 @@
+@use '../abstracts/mixins' as *;
+@use '../base/base' as *;
+
+@include respond(tab-port) {
+   // -- Mobile btn and bg
+
+   .mobile {
+      &__btn {
+         height: var(--s-big-3);
+         width: var(--s-big-3);
+         position: fixed;
+         cursor: pointer;
+
+         top: 3.2rem;
+         right: 3.2rem;
+         border-radius: 50%;
+         background-color: #fff;
+         box-shadow: 0 0 3rem rgb(194, 194, 194);
+
+         z-index: 77;
+
+         @include respond(phone) {
+            right: 3.3rem;
+            top: 3.3rem;
+         }
+
+         & span,
+         &::before,
+         &::after {
+            display: inline-block;
+            position: fixed;
+            width: 4rem;
+            height: 2px;
+
+            top: 6.8rem;
+            right: 4.9rem;
+            background-color: var(--cl-neutral-700);
+
+            @include respond(phone) {
+               right: 5rem;
+               background-color: var(--cl-neutral-500);
+            }
+         }
+
+         &::before,
+         &::after {
+            content: '';
+            position: absolute;
+            left: 1.7rem;
+            transition: all 0.4s;
+         }
+
+         &::before {
+            top: 2.5rem;
+
+            @include respond(phone) {
+               top: 2.4rem;
+            }
+         }
+
+         &::after {
+            top: 4.7rem;
+         }
+      }
+
+      &__background {
+         height: 7rem;
+         width: 7rem;
+         border-radius: 50%;
+         position: fixed;
+
+         top: 3.5rem;
+         right: 3.5rem;
+
+         z-index: 44;
+
+         background-image: radial-gradient(
+            var(--cl-accent),
+            var(--cl-accent-shade-3)
+         );
+
+         transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+      }
+   }
+
+   // -- Navigation
+
+   .nav {
+      @include flex-column(4rem);
+      position: fixed;
+
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      margin-top: -8rem;
+
+      transition: all 0.5s ease-out;
+
+      // - Hide nav
+      opacity: 0;
+      pointer-events: none;
+      visibility: hidden;
+
+      @include respond(tab-port) {
+         margin-top: -4rem;
+      }
+
+      &__sections {
+         gap: 0;
+
+         &--first,
+         &--third {
+            justify-content: center;
+         }
+      }
+
+      &__items {
+         &--third {
+            margin-top: -4rem;
+
+            &::before {
+               display: inline-block;
+               content: '';
+               height: 0.1rem;
+               width: 100%;
+               margin-bottom: var(--s-3xs);
+               background-color: var(--cl-neutral-200);
+            }
+         }
+      }
+
+      &__items:nth-child(2) {
+         order: -1;
+      }
+
+      &__item {
+         font-size: var(--s-2xl);
+      }
+
+      &__logo {
+         margin-bottom: 2rem;
+      }
+
+      & img {
+         width: var(--ws-sm);
+      }
+   }
+
+   // - Show nav
+
+   .nav-open .nav {
+      opacity: 1;
+      pointer-events: auto;
+      visibility: visible;
+   }
+
+   .nav-open .mobile__btn {
+      & span {
+         background-color: transparent;
+      }
+
+      &::before {
+         top: var(--s-3xl);
+         transform: rotate(45deg);
+      }
+
+      &::after {
+         top: var(--s-3xl);
+         transform: rotate(-45deg);
+      }
+   }
+
+   .nav-open .mobile__background {
+      transform: scale(45);
+   }
+}

@@ -1,0 +1,237 @@
+/* ------------------ */
+/*       MIXINS       */
+/* ------------------ */
+
+// --== CONTAINER ==--
+
+@mixin container {
+   margin: 0 auto;
+   max-width: 140rem;
+   height: 100vh;
+}
+
+//   --== GRID ==--
+
+@mixin grid($gap) {
+   display: grid;
+   justify-content: center;
+   align-items: center;
+   gap: $gap;
+}
+
+@mixin grid-cols-2($gap) {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   justify-content: center;
+   align-items: center;
+   gap: $gap;
+}
+
+//   --== FLEX ==--
+
+@mixin flex {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+@mixin flex-gap($gap) {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: $gap;
+}
+
+@mixin flex-column($gap) {
+   display: flex;
+   flex-direction: column;
+   gap: $gap;
+}
+
+//  --== TYPOGRAPHY ==--
+
+/* -- HEADING -- */
+
+@mixin h1 {
+   font-size: var(--s-big-3);
+   font-weight: var(--fw-lg);
+
+   margin-bottom: var(--s-2xs);
+
+   text-align: center;
+   text-transform: uppercase;
+   line-height: var(--lh-md);
+   letter-spacing: var(--ls-2xl);
+
+   @include respond(tab-land) {
+      margin: 0 auto;
+      width: var(--ws-big-1);
+      line-height: var(--lh-lg);
+   }
+
+   @include respond(tab-port) {
+      margin: 0;
+      width: auto;
+      line-height: var(--lh-md);
+   }
+
+   @include respond(phone) {
+      font-size: var(--s-big-2);
+   }
+}
+
+@mixin h2 {
+   font-size: var(--s-big-1);
+   margin-bottom: var(--s-big-2);
+   color: var(--cl-header);
+
+   text-transform: uppercase;
+   line-height: var(--lh-md);
+}
+
+@mixin h3 {
+   font-size: var(--s-xl);
+   font-weight: var(--fw-xl);
+   text-transform: uppercase;
+   color: var(--cl-header);
+
+   letter-spacing: var(--ls-xl);
+}
+
+@mixin h4 {
+   font-size: var(--s-sm);
+   font-weight: var(--fw-xl);
+   text-transform: uppercase;
+   color: var(--cl-accent);
+
+   letter-spacing: var(--ls-xl);
+   margin-bottom: var(--s-2xs);
+
+   @include respond(tab-port) {
+      font-size: var(--s-lg);
+   }
+}
+
+@mixin centered-header {
+   text-align: center;
+   padding-top: var(--ws-sm);
+
+   @include respond(2k-desktop) {
+      padding-top: var(--ws-sm);
+   }
+
+   & h4 {
+      @include h4;
+   }
+
+   & h2 {
+      @include h2;
+   }
+}
+
+/* -- PARAGRAPH -- */
+
+@mixin p {
+   font-size: var(--s-xl);
+   letter-spacing: var(--ls-sm);
+   line-height: var(--lh-pg);
+}
+
+//   --== OTHER ==--
+
+@mixin bg-gradient {
+   background: linear-gradient(
+      90deg,
+      rgba(229, 229, 229, 1) 0%,
+      rgba(250, 250, 250, 1) 50.00001%,
+      rgba(229, 229, 229, 1) 100%
+   );
+}
+
+@mixin branch {
+   width: var(--s-3xl);
+   margin-bottom: var(--s-lg);
+
+   &:first-child {
+      transform: rotate(-90deg) scaleX(-1);
+   }
+
+   &:last-child {
+      transform: rotate(90deg);
+   }
+}
+
+@mixin branch-alt {
+   width: var(--s-2xl);
+   margin-bottom: var(--s-lg);
+
+   &:first-child {
+      transform: rotate(-50deg) scaleX(-1);
+   }
+
+   &:last-child {
+      transform: rotate(50deg);
+   }
+}
+
+@mixin header-branch {
+   .header-branch {
+      @include flex-gap(1.5rem);
+      height: 5rem;
+      justify-content: flex-start;
+
+      & img {
+         @include branch;
+      }
+   }
+}
+
+@mixin header-branch-middle {
+   .header-branch-middle {
+      @include flex-gap(1.5rem);
+      height: 6rem;
+
+      & img {
+         @include branch;
+      }
+   }
+}
+
+//    --== MEDIA QUERY MANAGER ==--
+
+@mixin respond($breakpoint) {
+   @if $breakpoint == tab-land {
+      // 1200px
+      @media (max-width: 75em) {
+         @content;
+      }
+   }
+
+   @if $breakpoint == tab-port {
+      // 900px
+      @media (max-width: 56.25em) {
+         @content;
+      }
+   }
+
+   @if $breakpoint == phone {
+      // 500px
+      @media (max-width: 31.25em) {
+         @content;
+      }
+   }
+
+   @if $breakpoint == mini-phone {
+      // 320px 568px
+      @media (max-width: 20em) {
+         @content;
+      }
+   }
+
+   @if $breakpoint == 2k-desktop {
+      // 2500px
+      @media (min-width: 156.25em) {
+         @content;
+      }
+   }
+}

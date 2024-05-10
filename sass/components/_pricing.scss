@@ -1,0 +1,91 @@
+@use '../base/base' as *;
+@use '../abstracts/mixins' as *;
+
+.pricing {
+   @include flex;
+
+   &__tables {
+      @include flex-gap(10rem);
+
+      @include respond(tab-land) {
+         @include flex-column(6rem);
+      }
+   }
+
+   & table {
+      border: 1px solid #e5e5e5;
+      width: var(--ws-4xl);
+      font-size: var(--s-lg);
+      margin-top: var(--ws-3xs);
+      border-collapse: collapse;
+
+      @include respond(tab-port) {
+         width: 71rem;
+      }
+
+      & th,
+      td {
+         text-align: left;
+         padding: var(--s-xl);
+
+         @include respond(phone) {
+            padding: var(--s-lg);
+         }
+      }
+
+      & thead th {
+         background-color: var(--cl-accent-shade);
+         color: #fff;
+         width: 25%;
+
+         @include respond(phone) {
+            width: 15%;
+         }
+
+         &::selection {
+            background-color: var(--cl-accent-tint);
+            color: #fff;
+         }
+      }
+
+      & tbody tr:nth-child(odd) {
+         background-color: #fff;
+      }
+   }
+
+   .table-1 {
+      @include respond(phone) {
+         width: 90vw;
+      }
+
+      & tbody tr:nth-child(even) {
+         background: linear-gradient(
+            90deg,
+            rgba(212, 212, 212, 1) 0%,
+            rgba(229, 229, 229, 1) 100%
+         );
+
+         @include respond(tab-land) {
+            background: var(--cl-neutral-300);
+         }
+      }
+   }
+
+   .table-2 {
+      @include respond(phone) {
+         width: 90vw;
+      }
+
+      & tbody tr:nth-child(even) {
+         background: linear-gradient(
+            90deg,
+            rgba(229, 229, 229, 1) 0%,
+            rgba(212, 212, 212, 1) 100%
+         );
+
+         @include respond(tab-land) {
+            background: var(--cl-neutral-300);
+         }
+      }
+   }
+}

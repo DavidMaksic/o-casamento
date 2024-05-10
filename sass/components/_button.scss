@@ -1,0 +1,25 @@
+@use '../base/base' as *;
+
+.btn {
+   &:link,
+   &:visited {
+      display: inline-block;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+
+      font-size: var(--s-xl);
+      color: var(--cl-neutral-600);
+      padding: var(--s-sm) var(--s-lg);
+      box-shadow: var(--bs-md);
+
+      background-color: #fff;
+      transition: all 0.3s;
+   }
+
+   &:hover,
+   &:active {
+      color: var(--cl-neutral-500);
+      box-shadow: none;
+   }
+}
