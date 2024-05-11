@@ -609,6 +609,11 @@ body {
     margin: 0 auto;
   }
 }
+@media only screen and (max-width: 31.25em) {
+  .pricing table th {
+    font-size: 1.6rem;
+  }
+}
 .pricing table th,
 .pricing table td {
   text-align: left;
@@ -624,6 +629,11 @@ body {
   background-color: var(--cl-accent-shade);
   color: #fff;
   padding: var(--s-2xl);
+}
+@media only screen and (max-width: 31.25em) {
+  .pricing table thead th {
+    padding: 2rem;
+  }
 }
 .pricing table thead th::selection {
   background-color: var(--cl-accent-tint);
