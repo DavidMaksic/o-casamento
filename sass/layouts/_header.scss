@@ -71,6 +71,10 @@
             margin: 2rem;
          }
 
+         @include respond(phone) {
+            margin: 1rem;
+         }
+
          &::selection {
             background-color: #579f9a;
             color: #fff;

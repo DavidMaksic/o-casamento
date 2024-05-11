@@ -150,12 +150,24 @@ html {
       }
    }
 
+   @include respond(bonus) {
+      font-size: 46%;
+   }
+
    @include respond(phone) {
       font-size: 48%;
 
       .display__phone {
          display: none;
       }
+   }
+
+   @media only screen and (max-width: 24.37em) {
+      font-size: 40%;
+   }
+
+   @media only screen and (max-width: 21.87em) {
+      font-size: 36%;
    }
 
    @include respond(mini-phone) {

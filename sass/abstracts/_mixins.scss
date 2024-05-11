@@ -5,9 +5,8 @@
 // --== CONTAINER ==--
 
 @mixin container {
-   margin: 0 auto;
    max-width: 80vw;
-   height: 100vh;
+   margin: 0 auto;
 
    @include respond(tab-port) {
       max-width: 100vw;
@@ -67,6 +66,8 @@
    line-height: var(--lh-md);
    letter-spacing: var(--ls-2xl);
 
+   overflow: hidden;
+
    @include respond(tab-land) {
       margin: 0 auto;
       width: var(--ws-big-1);
@@ -82,6 +83,14 @@
    @include respond(phone) {
       font-size: var(--s-big-2);
    }
+
+   @media only screen and (max-width: 27.81em) {
+      font-size: var(--s-big-1);
+   }
+
+   @media only screen and (max-width: 24.37em) {
+      font-size: var(--s-4xl);
+   }
 }
 
 @mixin h2 {
@@ -91,6 +100,10 @@
 
    text-transform: uppercase;
    line-height: var(--lh-md);
+
+   @media only screen and (max-width: 25.75em) {
+      font-size: 5rem;
+   }
 }
 
 @mixin h3 {
@@ -214,6 +227,13 @@
    @if $breakpoint == tab-port {
       // 900px
       @media only screen and (max-width: 56.25em) {
+         @content;
+      }
+   }
+
+   @if $breakpoint == bonus {
+      // 700px
+      @media only screen and (max-width: 43.75em) {
          @content;
       }
    }

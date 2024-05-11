@@ -9,30 +9,19 @@
    width: 100%;
    height: 100%;
 
-   padding-top: 6rem;
+   display: grid;
+   grid-template-rows: 0.5fr 1fr 0.5fr 0.5fr;
 
-   @include respond(2k-desktop) {
-      padding-top: 10rem;
-   }
-
-   @include respond(tab-land) {
-      padding-top: 10rem;
-   }
-
-   @include respond(tab-land) {
-      padding-top: 25rem;
-   }
-
-   @include respond(mini-phone) {
-      padding-top: 29rem;
-   }
-
-   overflow: auto;
+   overflow-x: hidden;
    z-index: 88;
 
    background-color: rgba($color: #000000, $alpha: 0.7);
    backdrop-filter: blur(0.8rem);
    transition: all 0.3s;
+
+   @include respond(phone) {
+      grid-template-rows: 0.8fr 1fr 0.4fr 0.8fr;
+   }
 
    &__content {
       position: relative;
@@ -43,22 +32,29 @@
    &__previews {
       @include flex;
       gap: 0.5rem;
+
+      @include respond(tab-land) {
+         gap: 0.5vw;
+      }
    }
 
    &__preview {
-      height: 14rem;
+      height: 14vh;
       margin-top: var(--s-lg);
       opacity: 60%;
       cursor: pointer;
       transition: all 0.2s;
 
       @include respond(tab-land) {
-         height: 10rem;
+         height: 10vh;
       }
 
       @include respond(phone) {
-         margin-top: 3rem;
-         height: 9.5rem;
+         height: 8vh;
+      }
+
+      @media only screen and (max-width: 27.5em) {
+         height: 7vh;
       }
 
       &:hover,
@@ -73,40 +69,52 @@
    }
 
    &__image {
-      max-height: 70rem;
+      max-height: 70vh;
 
       @include respond(2k-desktop) {
-         max-height: 65rem;
+         max-height: 65vh;
       }
 
       @include respond(tab-land) {
-         max-height: 65rem;
+         max-height: 65vh;
+         max-width: 100vh;
       }
 
       @include respond(tab-port) {
-         max-height: 40rem;
+         max-height: 50vh;
+      }
+
+      @include respond(bonus) {
+         max-height: 40vh;
+      }
+
+      @include respond(phone) {
+         max-height: 30vh;
+         max-width: 100vw;
       }
    }
 
    &__close {
       position: absolute;
-      top: -3rem;
-      right: 5rem;
+      top: -3vh;
+      right: 3vw;
       width: 5rem;
       filter: invert(1) contrast(0.6);
       cursor: pointer;
       transition: filter 0.2s;
 
       @include respond(tab-land) {
-         top: -6rem;
+         top: -6vh;
       }
 
-      @include respond(tab-land) {
-         top: -20.5rem;
-         right: 4.4rem;
+      @include respond(tab-port) {
+         top: -12vh;
       }
 
       @include respond(phone) {
+         top: -22vh;
+         right: 6vw;
+
          filter: invert(1) contrast(1);
       }
 
@@ -125,6 +133,7 @@
 
       @include respond(phone) {
          filter: invert(1) contrast(1);
+         width: 6rem;
       }
 
       &--1 {

@@ -44,6 +44,10 @@
          }
       }
 
+      @media only screen and (max-width: 25.75em) {
+         grid-template-rows: 0.9fr 0.8fr 0.1fr 1fr;
+      }
+
       & h1 {
          @include h1;
          font-weight: var(--fw-3xl);
@@ -204,11 +208,11 @@
       @include container;
       @include header-branch-middle;
       @include centered-header;
-      width: 120rem;
+      width: 65vw;
+      padding-bottom: 14rem;
 
       @include respond(tab-port) {
          width: 90vw;
-         height: min-content;
          padding-bottom: 12rem;
       }
    }
@@ -224,7 +228,7 @@
       @include respond(tab-land) {
          grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
          gap: (var(--ws-xs));
-         row-gap: var(--ws-2xs);
+         row-gap: var(--ws-xs);
       }
 
       @include respond(tab-port) {
@@ -242,8 +246,16 @@
          justify-self: center;
          width: 20vw;
 
+         @include respond(tab-land) {
+            width: 30vw;
+         }
+
          @include respond(tab-port) {
             width: 40vw;
+         }
+
+         @include respond(phone) {
+            width: 70vw;
          }
 
          & img {
@@ -294,7 +306,6 @@
 
       @include respond(phone) {
          grid-template-columns: 1fr;
-         height: min-content;
          padding-top: var(--ws-sm);
          justify-content: center;
 
@@ -477,16 +488,16 @@
    &__circle {
       top: 5rem;
       width: 14rem;
-      transform: skew(-15deg) translateX(63.5rem);
+      transform: skew(-15deg) translateX(36.6vw);
 
       @include respond(tab-land) {
          top: 3rem;
-         transform: skew(-15deg) translateX(59.3rem);
+         transform: skew(-15deg) translateX(35.6vw);
       }
 
       @include respond(tab-port) {
          top: 2rem;
-         transform: skew(-15deg) translateX(31.6rem);
+         transform: skew(-15deg) translateX(41vw);
       }
 
       @include respond(phone) {
@@ -499,23 +510,24 @@
       width: 5rem;
 
       filter: contrast(0.7);
-      transform: skew(-10deg) translateX(68rem);
+      transform: skew(-10deg) translateX(39vw);
 
       @include respond(tab-land) {
          top: 6rem;
-         transform: skew(-10deg) translateX(64rem);
       }
 
       @include respond(tab-port) {
-         top: 3rem;
-         transform: skew(-10deg) translateX(36.5rem);
+         top: 4rem;
+         transform: skew(-15deg) translateX(47vw);
       }
 
       @include respond(phone) {
+         top: 2rem;
+
          width: 7rem;
 
          opacity: 60%;
-         transform: skew(-10deg) translateX(49.5rem);
+         transform: skew(-10deg) translateX(78vw);
       }
    }
 
@@ -683,7 +695,6 @@
       @include header-branch-middle;
       @include centered-header;
       max-width: 160rem;
-      height: min-content;
       margin-bottom: 10rem;
 
       @include respond(tab-land) {
@@ -723,7 +734,6 @@
       @include container;
       @include grid-cols-2(10rem);
       @include header-branch;
-      height: min-content;
 
       @include respond(tab-land) {
          @include grid-cols-2(6rem);
@@ -733,6 +743,7 @@
       @include respond(tab-port) {
          grid-template-columns: 1fr;
          gap: 10rem;
+         overflow-x: hidden;
 
          .header-branch {
             justify-content: center;
@@ -742,6 +753,7 @@
 
    &__info {
       position: relative;
+      justify-self: center;
 
       .tab-port__branch {
          display: none;
@@ -804,10 +816,18 @@
 
          @include respond(phone) {
             width: 12rem;
-            top: 37.5rem;
+            top: 36.3rem;
             left: -4rem;
 
             opacity: 45%;
+         }
+
+         @media only screen and (max-width: 25.75em) {
+            top: 35.8rem;
+         }
+
+         @include respond(mini-phone) {
+            top: 36.8rem;
          }
       }
 
@@ -832,10 +852,20 @@
 
          @include respond(phone) {
             width: 7rem;
-            top: 48em;
-            left: 45.3rem;
+            top: 47em;
+            left: 73vw;
 
             z-index: 1;
+         }
+
+         @media only screen and (max-width: 25.75em) {
+            top: 46.3em;
+            left: 68vw;
+         }
+
+         @include respond(mini-phone) {
+            top: 47.3em;
+            left: 71vw;
          }
       }
    }
@@ -848,6 +878,8 @@
 
       border-left: 1px solid var(--cl-neutral-300);
       border-right: 1px solid var(--cl-neutral-300);
+
+      overflow: hidden;
 
       @include respond(tab-land) {
          width: 37.25vw;
