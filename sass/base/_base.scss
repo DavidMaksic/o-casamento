@@ -192,7 +192,7 @@ body {
    color: #fff;
 }
 
-*:focus {
+*:focus-visible {
    outline: none;
    box-shadow: 0 0 0 0.5rem hsla(175, 27%, 56%, 0.5) !important;
 }
