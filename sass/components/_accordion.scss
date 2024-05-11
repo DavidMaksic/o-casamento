@@ -9,9 +9,14 @@
 
    background-color: #fff;
    box-shadow: var(--bs-sm);
+   z-index: 11;
 
    @include respond(tab-port) {
       max-width: 50vw;
+   }
+
+   @include respond(phone) {
+      max-width: 47vw;
    }
 
    &__item {
@@ -74,7 +79,7 @@
       }
 
       @include respond(phone) {
-         max-height: 16rem;
+         max-height: 22rem;
       }
    }
 

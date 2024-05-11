@@ -74,17 +74,13 @@
 
       @include respond(phone) {
          display: grid;
-         grid-template-columns: 1fr 0.01fr 1fr;
+         grid-template-columns: 1fr 0.21fr 0.9fr;
          row-gap: 3rem;
          margin: 0 auto;
       }
 
       & li {
          list-style: none;
-
-         @include respond(phone) {
-            justify-self: center;
-         }
 
          & span,
          & a:link,

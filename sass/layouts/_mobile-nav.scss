@@ -4,7 +4,14 @@
 @include respond(tab-port) {
    // -- Mobile btn and bg
 
-   .mobile {
+   .mobile-nav {
+      // - Hide hamburger
+      opacity: 0;
+      pointer-events: none;
+      visibility: hidden;
+
+      transition: all 0.7s;
+
       &__btn {
          height: var(--s-big-3);
          width: var(--s-big-3);
@@ -155,7 +162,7 @@
       visibility: visible;
    }
 
-   .nav-open .mobile__btn {
+   .nav-open .mobile-nav__btn {
       & span {
          background-color: transparent;
       }
@@ -171,7 +178,15 @@
       }
    }
 
-   .nav-open .mobile__background {
+   .nav-open .mobile-nav__background {
       transform: scale(45);
+   }
+
+   // - Show hamburger
+
+   .ham-sticky-active {
+      opacity: 1;
+      pointer-events: auto;
+      visibility: visible;
    }
 }

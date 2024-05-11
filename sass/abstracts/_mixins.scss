@@ -88,10 +88,12 @@
       font-size: var(--s-big-2);
    }
 
+   // - Bellow 445px
    @media only screen and (max-width: 27.81em) {
       font-size: var(--s-big-1);
    }
 
+   // - Bellow 390px
    @media only screen and (max-width: 24.37em) {
       font-size: var(--s-4xl);
    }
@@ -104,10 +106,6 @@
 
    text-transform: uppercase;
    line-height: var(--lh-md);
-
-   @media only screen and (max-width: 25.75em) {
-      font-size: 5rem;
-   }
 }
 
 @mixin h3 {
@@ -235,7 +233,7 @@
       }
    }
 
-   @if $breakpoint == bonus {
+   @if $breakpoint == big-phone {
       // 700px
       @media only screen and (max-width: 43.75em) {
          @content;
@@ -249,8 +247,15 @@
       }
    }
 
+   @if $breakpoint == s10 {
+      // 412px
+      @media only screen and (max-width: 25.75em) {
+         @content;
+      }
+   }
+
    @if $breakpoint == mini-phone {
-      // 320px 568px
+      // 320px
       @media only screen and (max-width: 20em) {
          @content;
       }

@@ -44,8 +44,13 @@
          }
       }
 
-      @media only screen and (max-width: 25.75em) {
+      @include respond(s10) {
          grid-template-rows: 0.9fr 0.8fr 0.1fr 1fr;
+      }
+
+      // - Bellow 430px and above 700px
+      @media only screen and (max-width: 26.87em) and (min-height: 43.75em) {
+         grid-template-rows: 0.7fr 0.6fr 0.1fr 0.9fr;
       }
 
       & h1 {
@@ -56,6 +61,11 @@
          &::selection {
             background-color: var(--cl-accent-tint);
             color: #fff;
+         }
+
+         // - Bellow 430px and above 700px
+         @media only screen and (max-width: 26.9em) and (min-height: 43.75em) {
+            font-size: 5.5rem;
          }
 
          @include respond(ultrawide-desktop) {
@@ -113,10 +123,6 @@
       @include grid-cols-2(10rem);
       @include header-branch;
 
-      @include respond(2k-desktop) {
-         max-width: 140rem;
-      }
-
       @include respond(tab-land) {
          @include grid-cols-2(6rem);
       }
@@ -124,7 +130,16 @@
       @include respond(tab-port) {
          grid-template-columns: 0.5fr 1fr;
          gap: 4rem;
-         margin-right: 1rem;
+         margin-right: 2vw;
+      }
+
+      // - Bellow 430px
+      @media only screen and (max-width: 26.9em) {
+         gap: 3rem;
+      }
+
+      @include respond(2k-desktop) {
+         max-width: 140rem;
       }
    }
 
@@ -140,6 +155,11 @@
 
          @include respond(phone) {
             margin-bottom: var(--s-3xl);
+         }
+
+         // - Bellow 430px
+         @media only screen and (max-width: 26.9em) {
+            font-size: 4rem;
          }
       }
 
@@ -162,6 +182,7 @@
          display: none;
       }
 
+      // - Above 1200px
       @media (min-width: 75em) {
          &--1 {
             display: block;
@@ -635,6 +656,11 @@
          grid-template-columns: 1fr 3fr;
          max-width: 100vw;
       }
+
+      // - Bellow 430px and above 720px
+      @media only screen and (max-width: 26.9em) and (min-height: 45em) {
+         gap: 3rem;
+      }
    }
 
    &__video {
@@ -646,6 +672,7 @@
          display: none;
       }
 
+      // - Above 900px
       @media (min-width: 56.25em) {
          &--1 {
             display: block;
@@ -826,8 +853,8 @@
             opacity: 45%;
          }
 
-         @media only screen and (max-width: 25.75em) {
-            top: 35.8rem;
+         @include respond(s10) {
+            top: 35.6rem;
          }
 
          @include respond(mini-phone) {
@@ -862,7 +889,7 @@
             z-index: 1;
          }
 
-         @media only screen and (max-width: 25.75em) {
+         @include respond(s10) {
             top: 46.3em;
             left: 68vw;
          }
@@ -939,6 +966,8 @@
    opacity: 0;
    pointer-events: auto;
    visibility: hidden;
+
+   z-index: 22;
 
    @include respond(tab-port) {
       bottom: 6rem;

@@ -150,7 +150,7 @@ html {
       }
    }
 
-   @include respond(bonus) {
+   @include respond(big-phone) {
       font-size: 46%;
    }
 
@@ -162,10 +162,12 @@ html {
       }
    }
 
+   // - Bellow 390px
    @media only screen and (max-width: 24.37em) {
       font-size: 40%;
    }
 
+   // - Bellow 350px
    @media only screen and (max-width: 21.87em) {
       font-size: 36%;
    }

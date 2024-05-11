@@ -215,7 +215,7 @@ observePhone.observe(footer);
 //      --== MOBILE NAVIGATION ==--
 
 const headerEl = document.querySelector('.header');
-const mobileBtn = document.querySelector('.mobile__btn');
+const mobileBtn = document.querySelector('.mobile-nav__btn');
 
 mobileBtn.addEventListener('click', function () {
    headerEl.classList.toggle('nav-open');
@@ -235,3 +235,24 @@ navItems.forEach((item) => {
 navLogo.addEventListener('click', () => {
    headerEl.classList.remove('nav-open');
 });
+
+//     --== HAMBURGER OBSERVER ==--
+
+const hamburger = document.querySelector('.mobile-nav');
+
+const observeHam = new IntersectionObserver(
+   function (entries) {
+      const ent = entries[0];
+
+      if (!ent.isIntersecting) {
+         hamburger.classList.add('ham-sticky-active');
+      }
+   },
+   {
+      root: null,
+      threshold: 0,
+      rootMargin: '-1px',
+   }
+);
+
+observeHam.observe(heroSection);

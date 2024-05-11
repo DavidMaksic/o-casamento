@@ -53,6 +53,7 @@
          height: 8vh;
       }
 
+      // - Bellow 440px
       @media only screen and (max-width: 27.5em) {
          height: 7vh;
       }
@@ -84,7 +85,7 @@
          max-height: 50vh;
       }
 
-      @include respond(bonus) {
+      @include respond(big-phone) {
          max-height: 40vh;
       }
 
