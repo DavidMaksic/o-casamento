@@ -96,7 +96,8 @@
       // }
 
       @media (hover: hover) {
-         &:hover {
+         &:hover,
+         &:active {
             transform: scale(0.95);
             color: var(--cl-neutral-100);
 

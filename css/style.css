@@ -700,8 +700,10 @@ body {
 .t-slider__chevrons--1 {
   left: 14%;
 }
-.t-slider__chevrons--1:hover, .t-slider__chevrons--1:active {
-  transform: translate(-0.5rem);
+@media (hover: hover) {
+  .t-slider__chevrons--1:hover, .t-slider__chevrons--1:active {
+    transform: translate(-0.5rem);
+  }
 }
 @media only screen and (max-width: 56.25em) {
   .t-slider__chevrons--1 {
@@ -1404,7 +1406,7 @@ body {
   }
 }
 @media (hover: hover) {
-  .hero__btn:hover {
+  .hero__btn:hover, .hero__btn:active {
     transform: scale(0.95);
     color: var(--cl-neutral-100);
     border: 2px solid #fff;

@@ -31,9 +31,11 @@
       &--1 {
          left: 14%;
 
-         &:hover,
-         &:active {
-            transform: translate(-0.5rem);
+         @media (hover: hover) {
+            &:hover,
+            &:active {
+               transform: translate(-0.5rem);
+            }
          }
 
          @include respond(tab-port) {
