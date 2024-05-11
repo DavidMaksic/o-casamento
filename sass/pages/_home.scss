@@ -782,7 +782,6 @@
 
       @include respond(tab-land) {
          @include grid-cols-2(6rem);
-         max-width: 95vw;
       }
 
       @include respond(tab-port) {
@@ -931,39 +930,18 @@
       }
 
       @include respond(tab-port) {
-         width: 97vw;
+         width: 99vw;
          height: min-content;
          border: none;
          border-top: 2px solid var(--cl-neutral-300);
       }
 
-      @include respond(phone) {
-         width: 95vw;
-      }
-
-      @include respond(mini-phone) {
-         width: 94.8vw;
-      }
-
       & iframe {
          height: inherit;
-         width: 33vw;
-
-         @include respond(tab-land) {
-            width: 37vw;
-         }
 
          @include respond(tab-port) {
-            width: 98vw;
+            width: 99vw;
             height: 40rem;
-         }
-
-         @include respond(phone) {
-            width: 96.8vw;
-         }
-
-         @include respond(mini-phone) {
-            width: 94.8vw;
          }
       }
    }
