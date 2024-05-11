@@ -2070,7 +2070,8 @@ body {
   grid-template-columns: repeat(2, 1fr);
   justify-content: center;
   align-items: center;
-  gap: 10rem;
+  gap: 0;
+  max-width: 70vw;
 }
 @media only screen and (max-width: 56.25em) {
   .faq__container {
@@ -2100,11 +2101,6 @@ body {
 .faq__container .header-branch img:last-child {
   transform: rotate(90deg);
 }
-@media only screen and (min-width: 156.25em) {
-  .faq__container {
-    gap: 0;
-  }
-}
 @media only screen and (max-width: 75em) {
   .faq__container {
     display: grid;
@@ -2112,12 +2108,14 @@ body {
     justify-content: center;
     align-items: center;
     gap: 6rem;
+    max-width: 85vw;
   }
 }
 @media only screen and (max-width: 56.25em) {
   .faq__container {
     gap: 5rem;
     grid-template-columns: 1fr 3fr;
+    max-width: 100vw;
   }
 }
 .faq__video {

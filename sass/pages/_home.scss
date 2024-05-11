@@ -620,20 +620,20 @@
 .faq {
    &__container {
       @include container;
-      @include grid-cols-2(10rem);
+      @include grid-cols-2(0);
       @include header-branch;
 
-      @include respond(2k-desktop) {
-         gap: 0;
-      }
+      max-width: 70vw;
 
       @include respond(tab-land) {
          @include grid-cols-2(6rem);
+         max-width: 85vw;
       }
 
       @include respond(tab-port) {
          gap: 5rem;
          grid-template-columns: 1fr 3fr;
+         max-width: 100vw;
       }
    }
 
