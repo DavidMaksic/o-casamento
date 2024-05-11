@@ -41,11 +41,7 @@
       & thead th {
          background-color: var(--cl-accent-shade);
          color: #fff;
-         width: 25%;
-
-         @include respond(phone) {
-            width: 15%;
-         }
+         padding: var(--s-2xl);
 
          &::selection {
             background-color: var(--cl-accent-tint);

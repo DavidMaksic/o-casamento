@@ -241,6 +241,10 @@
          grid-template-columns: 1fr;
       }
 
+      @include respond(2k-desktop) {
+         grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+      }
+
       & div {
          @include flex-column(2rem);
          justify-self: center;

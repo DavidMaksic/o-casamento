@@ -617,12 +617,7 @@ body {
 .pricing table thead th {
   background-color: var(--cl-accent-shade);
   color: #fff;
-  width: 25%;
-}
-@media only screen and (max-width: 31.25em) {
-  .pricing table thead th {
-    width: 15%;
-  }
+  padding: var(--s-2xl);
 }
 .pricing table thead th::selection {
   background-color: var(--cl-accent-tint);
@@ -1414,6 +1409,11 @@ body {
     max-width: 100vw;
   }
 }
+@media only screen and (min-width: 156.25em) {
+  .about__container {
+    max-width: 60vw;
+  }
+}
 .about__container .header-branch {
   display: flex;
   align-items: center;
@@ -1551,6 +1551,11 @@ body {
     max-width: 100vw;
   }
 }
+@media only screen and (min-width: 156.25em) {
+  .feature__container {
+    max-width: 60vw;
+  }
+}
 .feature__container .header-branch-middle {
   display: flex;
   align-items: center;
@@ -1630,6 +1635,11 @@ body {
     grid-template-columns: 1fr;
   }
 }
+@media only screen and (min-width: 156.25em) {
+  .feature__info {
+    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+  }
+}
 .feature__info div {
   display: flex;
   flex-direction: column;
@@ -1704,6 +1714,11 @@ body {
 @media only screen and (max-width: 56.25em) {
   .gallery__container {
     max-width: 100vw;
+  }
+}
+@media only screen and (min-width: 156.25em) {
+  .gallery__container {
+    max-width: 60vw;
   }
 }
 .gallery__container .header-branch {
@@ -1920,6 +1935,11 @@ body {
     max-width: 100vw;
   }
 }
+@media only screen and (min-width: 156.25em) {
+  .testimonials__container {
+    max-width: 60vw;
+  }
+}
 .testimonials__circle, .testimonials__quote-mark {
   position: absolute;
   opacity: 70%;
@@ -2057,6 +2077,11 @@ body {
     max-width: 100vw;
   }
 }
+@media only screen and (min-width: 156.25em) {
+  .faq__container {
+    max-width: 60vw;
+  }
+}
 .faq__container .header-branch {
   display: flex;
   align-items: center;
@@ -2173,6 +2198,11 @@ body {
     max-width: 100vw;
   }
 }
+@media only screen and (min-width: 156.25em) {
+  .pricing__container {
+    max-width: 60vw;
+  }
+}
 .pricing__container .header-branch-middle {
   display: flex;
   align-items: center;
@@ -2264,6 +2294,11 @@ body {
 @media only screen and (max-width: 56.25em) {
   .contact__container {
     max-width: 100vw;
+  }
+}
+@media only screen and (min-width: 156.25em) {
+  .contact__container {
+    max-width: 60vw;
   }
 }
 .contact__container .header-branch {

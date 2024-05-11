@@ -11,6 +11,10 @@
    @include respond(tab-port) {
       max-width: 100vw;
    }
+
+   @include respond(2k-desktop) {
+      max-width: 60vw;
+   }
 }
 
 //   --== GRID ==--
