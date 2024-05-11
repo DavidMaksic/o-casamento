@@ -1874,6 +1874,11 @@ body {
   height: 100vh;
   overflow: hidden;
 }
+@media only screen and (max-width: 31.25em) {
+  .gallery__images {
+    gap: 0.3rem;
+  }
+}
 .gallery__img {
   height: 100%;
   width: 100%;

@@ -407,6 +407,10 @@
 
       height: 100vh;
       overflow: hidden;
+
+      @include respond(phone) {
+         gap: 0.3rem;
+      }
    }
 
    &__img {
