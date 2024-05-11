@@ -1403,11 +1403,13 @@ body {
     justify-self: center;
   }
 }
-.hero__btn:hover, .hero__btn:active {
-  transform: scale(0.95);
-  color: var(--cl-neutral-100);
-  border: 2px solid #fff;
-  background-color: transparent;
+@media (hover: hover) {
+  .hero__btn:hover {
+    transform: scale(0.95);
+    color: var(--cl-neutral-100);
+    border: 2px solid #fff;
+    background-color: transparent;
+  }
 }
 .hero__btn:focus {
   outline: none;
