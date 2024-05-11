@@ -2435,7 +2435,7 @@ body {
 }
 @media only screen and (max-width: 25.75em) {
   .contact__flowers--1 {
-    top: 35.6rem;
+    top: 35.3rem;
   }
 }
 @media only screen and (max-width: 20em) {
@@ -2474,7 +2474,7 @@ body {
 }
 @media only screen and (max-width: 25.75em) {
   .contact__flowers--2 {
-    top: 46.3em;
+    top: 46em;
     left: 68vw;
   }
 }
