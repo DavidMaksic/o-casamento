@@ -268,3 +268,21 @@
       }
    }
 }
+
+//    --== HOVER ==--
+
+@mixin hover() {
+   @media (hover: none) {
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+      &:active {
+         @content;
+      }
+   }
+
+   @media (hover: hover) {
+      &:hover {
+         @content;
+      }
+   }
+}

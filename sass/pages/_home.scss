@@ -86,6 +86,14 @@
          }
       }
 
+      @include hover {
+         transform: scale(0.95);
+         color: var(--cl-neutral-100);
+
+         border: 2px solid #fff;
+         background-color: transparent;
+      }
+
       // &:hover,
       // &:active {
       //    transform: scale(0.95);
@@ -94,17 +102,6 @@
       //    border: 2px solid #fff;
       //    background-color: transparent;
       // }
-
-      @media (any-hover: hover) {
-         &:hover,
-         &:active {
-            transform: scale(0.95);
-            color: var(--cl-neutral-100);
-
-            border: 2px solid #fff;
-            background-color: transparent;
-         }
-      }
 
       &:focus-visible {
          outline: none;
