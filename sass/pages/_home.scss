@@ -86,22 +86,12 @@
          }
       }
 
-      // @include hover-support() {
-      //    transform: scale(0.95);
-      //    color: var(--cl-neutral-100);
+      @include hover {
+         transform: scale(0.95);
+         color: var(--cl-neutral-100);
 
-      //    border: 2px solid #fff;
-      //    background-color: transparent;
-      // }
-
-      @media (hover: hover) {
-         &:hover {
-            transform: scale(0.95);
-            color: var(--cl-neutral-100);
-
-            border: 2px solid #fff;
-            background-color: transparent;
-         }
+         border: 2px solid #fff;
+         background-color: transparent;
       }
 
       &:focus-visible {
@@ -428,8 +418,7 @@
       object-fit: cover;
       transition: all 0.5s;
 
-      &:hover,
-      &:visited {
+      @include hover {
          transform: scale(1.02);
       }
    }
@@ -489,16 +478,13 @@
          }
       }
 
-      @media (any-hover: hover) {
-         &:hover,
-         &:active {
-            color: var(--cl-neutral-700);
-            transform: scale(0.95);
+      @include hover {
+         color: var(--cl-neutral-700);
+         transform: scale(0.95);
 
-            box-shadow: var(--bs-sm);
-            border: 2px solid var(--cl-neutral-400);
-            background-color: #fff;
-         }
+         box-shadow: var(--bs-sm);
+         border: 2px solid var(--cl-neutral-400);
+         background-color: #fff;
       }
    }
 }
@@ -969,8 +955,7 @@
       border-radius: 50%;
    }
 
-   &:hover,
-   &:active {
+   @include hover {
       transform: scale(0.93);
       opacity: 80%;
    }

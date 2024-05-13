@@ -108,8 +108,7 @@
          text-decoration: none;
          transition: color 0.15s;
 
-         &:hover,
-         &:active {
+         @include hover {
             color: var(--cl-accent-tint);
          }
       }

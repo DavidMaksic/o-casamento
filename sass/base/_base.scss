@@ -136,6 +136,8 @@ html {
    font-size: 62.5%;
    scroll-behavior: smooth;
 
+   -webkit-tap-highlight-color: transparent;
+
    // -- == MEDIA QUERIES == --
 
    @include respond(tab-land) {

@@ -38,8 +38,7 @@
          transition: color 0.15s;
       }
 
-      &:hover,
-      &:active {
+      @include hover {
          & h3 {
             color: var(--cl-neutral-400);
          }

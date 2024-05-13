@@ -216,6 +216,18 @@
    }
 }
 
+//    --== HOVER ==--
+
+@mixin hover {
+   // Above 900px
+   @media only screen and (min-width: 56.25em) {
+      &:hover,
+      &:active {
+         @content;
+      }
+   }
+}
+
 //    --== MEDIA QUERY MANAGER ==--
 
 @mixin respond($breakpoint) {
@@ -268,14 +280,3 @@
       }
    }
 }
-
-//    --== HOVER ==--
-
-// @mixin hover-support {
-//    @media not all and (pointer: coarse) {
-//       &:hover,
-//       &:active {
-//          @content;
-//       }
-//    }
-// }

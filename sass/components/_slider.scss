@@ -22,8 +22,7 @@
       opacity: 80%;
       margin-bottom: var(--s-lg);
 
-      &:hover,
-      &:active {
+      @include hover {
          transform: scale(0.9);
          opacity: 40%;
       }
@@ -31,11 +30,8 @@
       &--1 {
          left: 14%;
 
-         @media (hover: hover) {
-            &:hover,
-            &:active {
-               transform: translate(-0.5rem);
-            }
+         @include hover {
+            transform: translate(-0.5rem);
          }
 
          @include respond(tab-port) {
@@ -46,8 +42,7 @@
       &--2 {
          right: 14%;
 
-         &:hover,
-         &:active {
+         @include hover {
             transform: translate(0.5rem);
          }
 

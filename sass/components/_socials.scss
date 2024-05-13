@@ -1,4 +1,5 @@
 @use '../base/base' as *;
+@use '../abstracts/mixins' as *;
 
 .socials {
    display: flex;
@@ -18,8 +19,7 @@
       transition: all 0.1s;
    }
 
-   & a:hover,
-   & a:active {
+   @include hover {
       color: var(--cl-neutral-500);
    }
 }

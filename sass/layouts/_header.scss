@@ -81,9 +81,10 @@
          }
       }
 
-      & a:hover,
-      & a:active {
-         color: var(--cl-neutral-400);
+      & a {
+         @include hover {
+            color: var(--cl-neutral-400);
+         }
       }
    }
 
@@ -151,14 +152,8 @@
          transition: all 0.2s;
       }
 
-      & .nav__sections a:hover,
-      & .nav__sections a:active {
-         color: var(--cl-neutral-400);
-      }
-
-      @media (hover: hover) {
-         & .nav__sections a:hover,
-         & .nav__sections a:active {
+      & .nav__sections a {
+         @include hover {
             color: var(--cl-neutral-400);
          }
       }
