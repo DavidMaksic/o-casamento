@@ -152,6 +152,10 @@ html {
       }
    }
 
+   @include respond(phone-land) {
+      font-size: 40%;
+   }
+
    @include respond(big-phone) {
       font-size: 46%;
    }
@@ -172,6 +176,10 @@ html {
    // - Bellow 350px
    @media only screen and (max-width: 21.87em) {
       font-size: 36%;
+   }
+
+   @include respond(mini-phone-land) {
+      font-size: 34%;
    }
 
    @include respond(mini-phone) {

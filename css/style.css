@@ -118,7 +118,12 @@ html {
     display: none;
   }
 }
-@media only screen and (max-width: 43.75em) {
+@media only screen and (max-width: 59.37em) and (max-height: 31.25em) and (orientation: landscape) {
+  html {
+    font-size: 40%;
+  }
+}
+@media only screen and (max-width: 43.75em) and (orientation: portrait) {
   html {
     font-size: 46%;
   }
@@ -139,6 +144,11 @@ html {
 @media only screen and (max-width: 21.87em) {
   html {
     font-size: 36%;
+  }
+}
+@media only screen and (max-width: 35.62em) and (max-height: 20.62em) and (orientation: landscape) {
+  html {
+    font-size: 34%;
   }
 }
 @media only screen and (max-width: 20em) {
@@ -492,7 +502,7 @@ body {
     max-height: 50vh;
   }
 }
-@media only screen and (max-width: 43.75em) {
+@media only screen and (max-width: 43.75em) and (orientation: portrait) {
   .modal__image {
     max-height: 40vh;
   }
@@ -625,6 +635,11 @@ body {
   .pricing table {
     width: 90vw;
     margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 59.37em) and (max-height: 31.25em) and (orientation: landscape) {
+  .pricing table {
+    width: 70vw;
   }
 }
 @media only screen and (max-width: 31.25em) {
@@ -1268,6 +1283,12 @@ body {
     margin-top: -4rem;
   }
 }
+@media only screen and (max-width: 56.25em) and (max-width: 59.37em) and (max-height: 31.25em) and (orientation: landscape) {
+  .nav {
+    margin-top: 0;
+    gap: 2rem;
+  }
+}
 @media only screen and (max-width: 56.25em) {
   .nav__sections {
     gap: 0;
@@ -1286,6 +1307,13 @@ body {
     margin-bottom: var(--s-3xs);
     background-color: var(--cl-neutral-200);
   }
+}
+@media only screen and (max-width: 56.25em) and (max-width: 59.37em) and (max-height: 31.25em) and (orientation: landscape) {
+  .nav__items--third::before {
+    margin-bottom: 0;
+  }
+}
+@media only screen and (max-width: 56.25em) {
   .nav__items:nth-child(2) {
     order: -1;
   }
@@ -1360,6 +1388,11 @@ body {
     align-self: center;
   }
 }
+@media only screen and (max-width: 56.25em) and (max-width: 59.37em) and (max-height: 31.25em) and (orientation: landscape) {
+  .hero__container .tab-port__logo img {
+    width: 10rem;
+  }
+}
 @media only screen and (max-width: 56.25em) and (max-width: 31.25em) {
   .hero__container .tab-port__logo img {
     width: 13rem;
@@ -1372,14 +1405,24 @@ body {
     color: #fff;
   }
 }
+@media only screen and (max-width: 56.25em) and (max-width: 59.37em) and (max-height: 31.25em) and (orientation: landscape) {
+  .hero__container .tab-port__logo span {
+    font-size: var(--s-xl);
+  }
+}
 @media only screen and (max-width: 25.75em) {
   .hero__container {
     grid-template-rows: 0.9fr 0.8fr 0.1fr 1fr;
   }
 }
-@media only screen and (max-width: 26.87em) and (min-height: 43.75em) {
+@media only screen and (max-width: 26.93em) and (min-height: 43.75em) {
   .hero__container {
     grid-template-rows: 0.7fr 0.6fr 0.1fr 0.9fr;
+  }
+}
+@media only screen and (max-width: 59.37em) and (max-height: 31.25em) and (orientation: landscape) {
+  .hero__container {
+    grid-template-rows: 1.7fr 1.3fr 0.9fr 0.9fr;
   }
 }
 .hero__container h1 {
@@ -1429,6 +1472,12 @@ body {
 }
 @media only screen and (max-width: 26.9em) and (min-height: 43.75em) {
   .hero__container h1 {
+    font-size: 5.5rem;
+  }
+}
+@media only screen and (max-width: 59.37em) and (max-height: 31.25em) and (orientation: landscape) {
+  .hero__container h1 {
+    color: #fff;
     font-size: 5.5rem;
   }
 }
@@ -1519,6 +1568,12 @@ body {
     grid-template-columns: 0.5fr 1fr;
     gap: 4rem;
     margin-right: 2vw;
+  }
+}
+@media only screen and (max-width: 59.37em) and (max-height: 31.25em) and (orientation: landscape) {
+  .about__container {
+    gap: 0;
+    margin-right: 10vw;
   }
 }
 @media only screen and (max-width: 26.9em) {
@@ -2043,6 +2098,11 @@ body {
     display: none;
   }
 }
+@media only screen and (max-width: 59.37em) and (max-height: 31.25em) and (orientation: landscape) {
+  .testimonials__circle {
+    transform: skew(-15deg) translateX(43vw);
+  }
+}
 .testimonials__quote-mark {
   top: 8rem;
   width: 5rem;
@@ -2200,6 +2260,11 @@ body {
     gap: 3rem;
   }
 }
+@media only screen and (max-width: 59.37em) and (max-height: 31.25em) and (orientation: landscape) {
+  .faq__container {
+    grid-template-columns: 1fr 2.6fr;
+  }
+}
 .faq__video {
   height: 100vh;
 }
@@ -2233,6 +2298,11 @@ body {
 @media only screen and (max-width: 31.25em) {
   .faq__accordion {
     margin-top: -50rem;
+  }
+}
+@media only screen and (max-width: 59.37em) and (max-height: 31.25em) and (orientation: landscape) {
+  .faq__accordion {
+    margin-top: -35rem;
   }
 }
 .faq__accordion h4 {

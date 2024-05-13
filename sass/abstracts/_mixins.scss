@@ -245,9 +245,16 @@
       }
    }
 
+   @if $breakpoint == phone-land {
+      // Bellow 950px and bellow 500px
+      @media only screen and (max-width: 59.37em) and (max-height: 31.25em) and (orientation: landscape) {
+         @content;
+      }
+   }
+
    @if $breakpoint == big-phone {
       // 700px
-      @media only screen and (max-width: 43.75em) {
+      @media only screen and (max-width: 43.75em) and (orientation: portrait) {
          @content;
       }
    }
@@ -262,6 +269,13 @@
    @if $breakpoint == s10 {
       // 412px
       @media only screen and (max-width: 25.75em) {
+         @content;
+      }
+   }
+
+   @if $breakpoint == mini-phone-land {
+      // Bellow 950px and bellow 500px
+      @media only screen and (max-width: 35.62em) and (max-height: 20.62em) and (orientation: landscape) {
          @content;
       }
    }

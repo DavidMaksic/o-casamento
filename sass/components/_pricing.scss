@@ -29,6 +29,10 @@
          margin: 0 auto;
       }
 
+      @include respond(phone-land) {
+         width: 70vw;
+      }
+
       & th {
          @include respond(phone) {
             font-size: 1.6rem;

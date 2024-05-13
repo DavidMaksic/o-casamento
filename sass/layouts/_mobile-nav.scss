@@ -113,6 +113,11 @@
          margin-top: -4rem;
       }
 
+      @include respond(phone-land) {
+         margin-top: 0;
+         gap: 2rem;
+      }
+
       &__sections {
          gap: 0;
 
@@ -133,6 +138,10 @@
                width: 100%;
                margin-bottom: var(--s-3xs);
                background-color: var(--cl-neutral-200);
+
+               @include respond(phone-land) {
+                  margin-bottom: 0;
+               }
             }
          }
       }

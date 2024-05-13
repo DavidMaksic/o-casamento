@@ -31,6 +31,10 @@
                filter: invert(1);
                align-self: center;
 
+               @include respond(phone-land) {
+                  width: 10rem;
+               }
+
                @include respond(phone) {
                   width: 13rem;
                }
@@ -40,6 +44,10 @@
                font-size: var(--s-2xl);
                font-weight: 600;
                color: #fff;
+
+               @include respond(phone-land) {
+                  font-size: var(--s-xl);
+               }
             }
          }
       }
@@ -49,8 +57,12 @@
       }
 
       // - Bellow 430px and above 700px
-      @media only screen and (max-width: 26.87em) and (min-height: 43.75em) {
+      @media only screen and (max-width: 26.93em) and (min-height: 43.75em) {
          grid-template-rows: 0.7fr 0.6fr 0.1fr 0.9fr;
+      }
+
+      @include respond(phone-land) {
+         grid-template-rows: 1.7fr 1.3fr 0.9fr 0.9fr;
       }
 
       & h1 {
@@ -65,6 +77,11 @@
 
          // - Bellow 430px and above 700px
          @media only screen and (max-width: 26.9em) and (min-height: 43.75em) {
+            font-size: 5.5rem;
+         }
+
+         @include respond(phone-land) {
+            color: #fff;
             font-size: 5.5rem;
          }
 
@@ -130,6 +147,11 @@
          grid-template-columns: 0.5fr 1fr;
          gap: 4rem;
          margin-right: 2vw;
+      }
+
+      @include respond(phone-land) {
+         gap: 0;
+         margin-right: 10vw;
       }
 
       // - Bellow 430px
@@ -529,6 +551,10 @@
       @include respond(phone) {
          display: none;
       }
+
+      @include respond(phone-land) {
+         transform: skew(-15deg) translateX(43vw);
+      }
    }
 
    &__quote-mark {
@@ -662,6 +688,10 @@
       @media only screen and (max-width: 26.9em) and (min-height: 45em) {
          gap: 3rem;
       }
+
+      @include respond(phone-land) {
+         grid-template-columns: 1fr 2.6fr;
+      }
    }
 
    &__video {
@@ -706,6 +736,10 @@
 
       @include respond(phone) {
          margin-top: -50rem;
+      }
+
+      @include respond(phone-land) {
+         margin-top: -35rem;
       }
 
       & h4 {
