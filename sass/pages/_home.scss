@@ -95,7 +95,7 @@
       //    background-color: transparent;
       // }
 
-      @media (hover: hover) {
+      @media (any-hover: hover) {
          &:hover,
          &:active {
             transform: scale(0.95);
@@ -106,7 +106,7 @@
          }
       }
 
-      &:focus {
+      &:focus-visible {
          outline: none;
          box-shadow: 0 0 0 0.8rem hsla(0, 0%, 96%, 0.5) !important;
       }
@@ -491,14 +491,16 @@
          }
       }
 
-      &:hover,
-      &:active {
-         color: var(--cl-neutral-700);
-         transform: scale(0.95);
+      @media (any-hover: hover) {
+         &:hover,
+         &:active {
+            color: var(--cl-neutral-700);
+            transform: scale(0.95);
 
-         box-shadow: var(--bs-sm);
-         border: 2px solid var(--cl-neutral-400);
-         background-color: #fff;
+            box-shadow: var(--bs-sm);
+            border: 2px solid var(--cl-neutral-400);
+            background-color: #fff;
+         }
       }
    }
 }
@@ -780,10 +782,6 @@
       @include container;
       @include grid-cols-2(10rem);
       @include header-branch;
-
-      @include respond(tab-land) {
-         @include grid-cols-2(6rem);
-      }
 
       @include respond(tab-port) {
          grid-template-columns: 1fr;

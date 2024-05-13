@@ -120,7 +120,7 @@
       }
 
       &:hover,
-      &:focus {
+      &:focus-visible {
          filter: invert(1) contrast(0.3);
       }
    }

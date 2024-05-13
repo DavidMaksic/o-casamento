@@ -520,7 +520,7 @@ body {
     filter: invert(1) contrast(1);
   }
 }
-.modal__close:hover, .modal__close:focus {
+.modal__close:hover, .modal__close:focus-visible {
   filter: invert(1) contrast(0.3);
 }
 .modal__chevrons {
@@ -1405,7 +1405,7 @@ body {
     justify-self: center;
   }
 }
-@media (hover: hover) {
+@media (any-hover: hover) {
   .hero__btn:hover, .hero__btn:active {
     transform: scale(0.95);
     color: var(--cl-neutral-100);
@@ -1413,7 +1413,7 @@ body {
     background-color: transparent;
   }
 }
-.hero__btn:focus {
+.hero__btn:focus-visible {
   outline: none;
   box-shadow: 0 0 0 0.8rem hsla(0, 0%, 96%, 0.5) !important;
 }
@@ -1943,12 +1943,14 @@ body {
     padding: var(--s-sm) var(--s-xl);
   }
 }
-.gallery__btn:hover, .gallery__btn:active {
-  color: var(--cl-neutral-700);
-  transform: scale(0.95);
-  box-shadow: var(--bs-sm);
-  border: 2px solid var(--cl-neutral-400);
-  background-color: #fff;
+@media (any-hover: hover) {
+  .gallery__btn:hover, .gallery__btn:active {
+    color: var(--cl-neutral-700);
+    transform: scale(0.95);
+    box-shadow: var(--bs-sm);
+    border: 2px solid var(--cl-neutral-400);
+    background-color: #fff;
+  }
 }
 
 .testimonials {
@@ -2347,15 +2349,6 @@ body {
 }
 .contact__container .header-branch img:last-child {
   transform: rotate(90deg);
-}
-@media only screen and (max-width: 75em) {
-  .contact__container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    justify-content: center;
-    align-items: center;
-    gap: 6rem;
-  }
 }
 @media only screen and (max-width: 56.25em) {
   .contact__container {
