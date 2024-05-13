@@ -1136,7 +1136,7 @@ body {
     color: var(--cl-neutral-400);
   }
 }
-@media (min-width: 56.25em) and (hover: none) {
+@media (min-width: 56.25em) and (hover: hover) {
   .sticky .nav__sections a:hover, .sticky .nav__sections a:active {
     color: var(--cl-neutral-400);
   }
@@ -1410,7 +1410,7 @@ body {
     justify-self: center;
   }
 }
-@media (hover: none) {
+@media (hover: hover) {
   .hero__btn:hover {
     transform: scale(0.95);
     color: var(--cl-neutral-100);

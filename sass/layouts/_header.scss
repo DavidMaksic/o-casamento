@@ -156,7 +156,7 @@
          color: var(--cl-neutral-400);
       }
 
-      @media (hover: none) {
+      @media (hover: hover) {
          & .nav__sections a:hover,
          & .nav__sections a:active {
             color: var(--cl-neutral-400);
