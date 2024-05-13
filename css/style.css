@@ -1405,18 +1405,7 @@ body {
     justify-self: center;
   }
 }
-@media (hover: none) {
-  .hero__btn {
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  }
-  .hero__btn:active {
-    transform: scale(0.95);
-    color: var(--cl-neutral-100);
-    border: 2px solid #fff;
-    background-color: transparent;
-  }
-}
-@media (hover: hover) {
+@media not all and (hover: none) {
   .hero__btn:hover {
     transform: scale(0.95);
     color: var(--cl-neutral-100);

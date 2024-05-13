@@ -86,7 +86,7 @@
          }
       }
 
-      @include hover {
+      @include hover() {
          transform: scale(0.95);
          color: var(--cl-neutral-100);
 
