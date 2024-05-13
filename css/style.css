@@ -2191,6 +2191,11 @@ body {
 .faq__accordion {
   margin-top: -42rem;
 }
+@media only screen and (max-width: 31.25em) {
+  .faq__accordion {
+    margin-top: -50rem;
+  }
+}
 .faq__accordion h4 {
   font-size: var(--s-sm);
   font-weight: var(--fw-xl);

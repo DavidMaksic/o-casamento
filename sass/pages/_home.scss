@@ -719,6 +719,10 @@
    &__accordion {
       margin-top: -42rem;
 
+      @include respond(phone) {
+         margin-top: -50rem;
+      }
+
       & h4 {
          @include h4;
       }
