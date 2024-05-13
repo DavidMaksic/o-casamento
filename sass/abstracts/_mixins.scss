@@ -271,10 +271,11 @@
 
 //    --== HOVER ==--
 
-@mixin hover-support {
-   @media not all and (pointer: coarse) {
-      &:hover {
-         @content;
-      }
-   }
-}
+// @mixin hover-support {
+//    @media not all and (pointer: coarse) {
+//       &:hover,
+//       &:active {
+//          @content;
+//       }
+//    }
+// }

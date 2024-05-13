@@ -86,24 +86,23 @@
          }
       }
 
-      @include hover-support() {
-         transform: scale(0.95);
-         color: var(--cl-neutral-100);
+      // @include hover-support() {
+      //    transform: scale(0.95);
+      //    color: var(--cl-neutral-100);
 
-         border: 2px solid #fff;
-         background-color: transparent;
-      }
-
-      // @media (hover: hover) {
-      //    &:hover,
-      //    &:active {
-      //       transform: scale(0.95);
-      //       color: var(--cl-neutral-100);
-
-      //       border: 2px solid #fff;
-      //       background-color: transparent;
-      //    }
+      //    border: 2px solid #fff;
+      //    background-color: transparent;
       // }
+
+      @media (hover: none) {
+         &:hover {
+            transform: scale(0.95);
+            color: var(--cl-neutral-100);
+
+            border: 2px solid #fff;
+            background-color: transparent;
+         }
+      }
 
       &:focus-visible {
          outline: none;

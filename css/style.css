@@ -1136,6 +1136,11 @@ body {
     color: var(--cl-neutral-400);
   }
 }
+@media (min-width: 56.25em) and (hover: none) {
+  .sticky .nav__sections a:hover, .sticky .nav__sections a:active {
+    color: var(--cl-neutral-400);
+  }
+}
 @media only screen and (max-width: 56.25em) {
   .mobile-nav {
     opacity: 0;
@@ -1405,7 +1410,7 @@ body {
     justify-self: center;
   }
 }
-@media not all and (pointer: coarse) {
+@media (hover: none) {
   .hero__btn:hover {
     transform: scale(0.95);
     color: var(--cl-neutral-100);
