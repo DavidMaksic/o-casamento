@@ -86,7 +86,7 @@
          }
       }
 
-      @include hover() {
+      @include hover-support() {
          transform: scale(0.95);
          color: var(--cl-neutral-100);
 
@@ -94,13 +94,15 @@
          background-color: transparent;
       }
 
-      // &:hover,
-      // &:active {
-      //    transform: scale(0.95);
-      //    color: var(--cl-neutral-100);
+      // @media (hover: hover) {
+      //    &:hover,
+      //    &:active {
+      //       transform: scale(0.95);
+      //       color: var(--cl-neutral-100);
 
-      //    border: 2px solid #fff;
-      //    background-color: transparent;
+      //       border: 2px solid #fff;
+      //       background-color: transparent;
+      //    }
       // }
 
       &:focus-visible {

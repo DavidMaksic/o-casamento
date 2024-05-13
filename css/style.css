@@ -1405,7 +1405,7 @@ body {
     justify-self: center;
   }
 }
-@media not all and (hover: none) {
+@media not all and (pointer: coarse) {
   .hero__btn:hover {
     transform: scale(0.95);
     color: var(--cl-neutral-100);
