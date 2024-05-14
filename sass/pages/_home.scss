@@ -284,7 +284,7 @@
       }
 
       @include respond(2k-desktop) {
-         grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+         grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
       }
 
       & div {
@@ -555,6 +555,10 @@
       @include respond(phone-land) {
          transform: skew(-15deg) translateX(43vw);
       }
+
+      @include respond(2k-desktop) {
+         transform: skew(-15deg) translateX(26.5vw);
+      }
    }
 
    &__quote-mark {
@@ -580,6 +584,10 @@
 
          opacity: 60%;
          transform: skew(-10deg) translateX(78vw);
+      }
+
+      @include respond(2k-desktop) {
+         transform: skew(-10deg) translateX(29vw);
       }
    }
 
@@ -692,6 +700,11 @@
       @include respond(phone-land) {
          grid-template-columns: 1fr 2.6fr;
       }
+
+      @include respond(2k-desktop) {
+         gap: 4rem;
+         max-width: 80vw;
+      }
    }
 
    &__video {
@@ -769,6 +782,10 @@
 
       @include respond(tab-land) {
          @include flex-column(0);
+      }
+
+      @include respond(2k-desktop) {
+         max-width: 100%;
       }
 
       & h2 {
@@ -959,6 +976,7 @@
 
       & iframe {
          height: inherit;
+         width: 100vw;
 
          @include respond(tab-port) {
             width: 99vw;

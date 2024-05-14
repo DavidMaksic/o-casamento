@@ -1765,7 +1765,7 @@ body {
 }
 @media only screen and (min-width: 156.25em) {
   .feature__info {
-    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
   }
 }
 .feature__info div {
@@ -2103,6 +2103,11 @@ body {
     transform: skew(-15deg) translateX(43vw);
   }
 }
+@media only screen and (min-width: 156.25em) {
+  .testimonials__circle {
+    transform: skew(-15deg) translateX(26.5vw);
+  }
+}
 .testimonials__quote-mark {
   top: 8rem;
   width: 5rem;
@@ -2126,6 +2131,11 @@ body {
     width: 7rem;
     opacity: 60%;
     transform: skew(-10deg) translateX(78vw);
+  }
+}
+@media only screen and (min-width: 156.25em) {
+  .testimonials__quote-mark {
+    transform: skew(-10deg) translateX(29vw);
   }
 }
 .testimonials__flowers--1, .testimonials__flowers--2, .testimonials__flowers--3, .testimonials__flowers--4, .testimonials__flowers--5, .testimonials__flowers--6 {
@@ -2265,6 +2275,12 @@ body {
     grid-template-columns: 1fr 2.6fr;
   }
 }
+@media only screen and (min-width: 156.25em) {
+  .faq__container {
+    gap: 4rem;
+    max-width: 80vw;
+  }
+}
 .faq__video {
   height: 100vh;
 }
@@ -2400,6 +2416,11 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0;
+  }
+}
+@media only screen and (min-width: 156.25em) {
+  .pricing__container {
+    max-width: 100%;
   }
 }
 @media only screen and (max-width: 31.25em) {
@@ -2631,6 +2652,7 @@ body {
 }
 .contact__map iframe {
   height: inherit;
+  width: 100vw;
 }
 @media only screen and (max-width: 56.25em) {
   .contact__map iframe {
